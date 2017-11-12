@@ -13,16 +13,14 @@ public class TextBoxMgr : MonoBehaviour
     public GameObject textBox;//어떤 대화창인지
 
     public Text theName;//이름 Text 오브젝트
-    public TextAsset NFile;//이름 파일
     public Text theDialogue;//대화 Text 오브젝트
-    public TextAsset DFile;//텍스트 파일
 
     public string[] NtextLines;//이름
     public string[] DtextLines;//대사
+    public Sprite[] IFile;//일러스트 파일 
 
     public int currentLine = 0;//진행중인 대사
     public int endAtLine;//마지막 대사
-  //public int CountActive=0;//몇번 말 걸었는가
 
     public bool isChoiceSentence = false;//선택문이 있는가
     public int setChoice = 0;//몇번째 문장에 선택문을 쓸것인가
@@ -39,7 +37,9 @@ public class TextBoxMgr : MonoBehaviour
 
     public bool isSprite = false;//일러스트가 있는가
     public Image theImage;//이미지 오브젝트
-    public Sprite[] IFile;//일러스트 파일 
+
+    public bool isRead = false;
+
     #endregion
 
     //스크립트 활성화마다 실행함수
@@ -52,12 +52,6 @@ public class TextBoxMgr : MonoBehaviour
     //대화창 준비함수
     void ReadyDialogue()
     {
-        if (NFile != null && DFile != null)//이름파일과 대화파일이 안 비었으면
-        {
-            NtextLines = (NFile.text.Split('\n'));//로드...
-            DtextLines = (DFile.text.Split('\n'));
-        }
-
         if (endAtLine == 0)
         {
             endAtLine = NtextLines.Length - 1;//배열길이로 초기화
@@ -109,6 +103,9 @@ public class TextBoxMgr : MonoBehaviour
 
             if (currentLine == endAtLine)//같을때
             {
+                Debug.Log("비활성화");
+                Time.timeScale = 1;
+                isRead = true;
                 DisableTextBox();//비활성화 함수
             }
             else
@@ -287,7 +284,6 @@ public class TextBoxMgr : MonoBehaviour
             GameObject.Find("UI").transform.Find("Canvas").transform.Find("TextBox").
             transform.Find("Button").transform.Find("Choice").gameObject.SetActive(false);
         }
-
         StopCoroutine("TextScroll");//코루틴 종료
         textBox.SetActive(false);//대화창 비활성화
     }  
