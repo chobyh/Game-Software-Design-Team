@@ -103,7 +103,6 @@ public class TextBoxMgr : MonoBehaviour
 
             if (currentLine == endAtLine)//같을때
             {
-                Debug.Log("비활성화");
                 Time.timeScale = 1;
                 isRead = true;
                 DisableTextBox();//비활성화 함수
