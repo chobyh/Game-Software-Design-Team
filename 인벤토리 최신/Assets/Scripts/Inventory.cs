@@ -9,8 +9,8 @@ public class Inventory : MonoBehaviour {
 	public List<Item> Items = new List<Item>();
 	public GameObject slots;
 	ItemDataBase database;
-	int x = -96;
-	int y = 360;
+	int x = -62;
+	int y = 310;
 
 	public GameObject tooltip;
 	public GameObject draggedItemGameObject;
@@ -59,7 +59,7 @@ public class Inventory : MonoBehaviour {
 
 		int Slotamount = 0;
 		database = GameObject.FindGameObjectWithTag ("ItemDataBase").GetComponent<ItemDataBase> ();
-		for (int i = 1; i < 6; i++) {
+		for (int i = 1; i < 7; i++) {
 			for (int k = 1; k < 6; k++) {
 				GameObject slot = (GameObject)Instantiate (slots);
 				slot.GetComponent<SlotScript>().slotNumber = Slotamount;
@@ -68,10 +68,10 @@ public class Inventory : MonoBehaviour {
 				slot.transform.parent = this.gameObject.transform;
 				slot.name = "Slot" + i + "." + k;
 				slot.GetComponent<RectTransform> ().localPosition = new Vector3 (x, y, 0);
-				x = x + 48;
+				x = x + 30;
 				if (k == 5) {
-					x = -96;
-					y = y - 180;
+					x = -62;
+					y = y - 125;
 				}
 				Slotamount++;
 			}

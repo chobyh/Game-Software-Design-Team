@@ -1,4 +1,4 @@
 sceneSetups:
-- path: "D:/\uBCD1\uD76C/NGUI/NGUI/Assets/\uC778\uBCA4\uD1A0\uB9AC.unity"
+- path: Assets/Scene/Inventory.unity
   isLoaded: 1
   isActive: 1
