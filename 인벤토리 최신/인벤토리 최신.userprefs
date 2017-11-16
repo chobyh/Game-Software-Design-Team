@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Inventory.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\ItemDataBase.cs">
     <Files>
-      <File FileName="Assets\Scripts\ItemDataBase.cs" Line="1" Column="1" />
-      <File FileName="Assets\Scripts\Inventory.cs" Line="74" Column="17" />
-      <File FileName="Assets\Scripts\SlotScript.cs" Line="29" Column="31" />
+      <File FileName="Assets\Scripts\ItemDataBase.cs" Line="17" Column="1" />
+      <File FileName="Assets\Scripts\Inventory.cs" Line="32" Column="123" />
+      <File FileName="Assets\Scripts\SlotScript.cs" Line="53" Column="3" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

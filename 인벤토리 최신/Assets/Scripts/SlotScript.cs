@@ -48,7 +48,7 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
 	{
 		if (inventory.Items [slotNumber].itemName != null && !inventory.draggingItem) 
 		{ 
-			//inventory.showTooltip (inventory.Slots [slotNumber].GetComponent<RectTransform> ().localPosition, inventory.Items [slotNumber]);
+			inventory.showTooltip (inventory.Slots [slotNumber].GetComponent<RectTransform> ().localPosition, inventory.Items [slotNumber]);
 		}
 	}
 

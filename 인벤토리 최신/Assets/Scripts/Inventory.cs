@@ -29,7 +29,7 @@ public class Inventory : MonoBehaviour {
 	public void showTooltip(Vector3 toolPosition, Item item)
 	{
 		tooltip.SetActive (true);
-		tooltip.transform.GetComponent<RectTransform> ().localPosition = new Vector3 (toolPosition.x + 185, toolPosition.y, toolPosition.z );
+		tooltip.transform.GetComponent<RectTransform> ().localPosition = new Vector3 (toolPosition.x + 185, toolPosition.y - 180, toolPosition.z );
 
 		tooltip.transform.GetChild (0).GetComponent<Text> ().text = item.itemName;
 		tooltip.transform.GetChild (1).GetComponent<Text> ().text = item.itemDesc;
