@@ -24,6 +24,7 @@ public class Inventory : MonoBehaviour {
 			Vector3 posi = (Input.mousePosition - GameObject.FindGameObjectWithTag ("Canvas").GetComponent<RectTransform> ().localPosition);
 			draggedItemGameObject.GetComponent<RectTransform> ().localPosition = new Vector3(posi.x + 15, posi.y -15, posi.z);
 		}
+
 	}
 
 	public void showTooltip(Vector3 toolPosition, Item item)
