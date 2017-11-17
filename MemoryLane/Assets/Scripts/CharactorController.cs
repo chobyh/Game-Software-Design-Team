@@ -15,6 +15,7 @@ public class CharactorController : MonoBehaviour {
     private TextBoxMgr textboxmgr;
 
     void Start () {
+        animator = GetComponent<Animator>();
         //ray = GetComponent<Ray2D>();
         //raycasthit = GetComponent<RaycastHit2D>();
     }
@@ -30,13 +31,13 @@ public class CharactorController : MonoBehaviour {
         float xMove = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float yMove = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         this.transform.Translate(new Vector2(xMove, yMove));
-        if (xMove == 0.0f && yMove == 0.0f)
+        if (xMove != 0.0f || yMove != 0.0f)
         {
-            GetComponent<Animator>().SetBool("Move", false);
+            animator.SetBool("Move", true);
         }
         else
         {
-            GetComponent<Animator>().SetBool("Move", true);
+            animator.SetBool("Move", false);
         }
     }
 
@@ -47,9 +48,9 @@ public class CharactorController : MonoBehaviour {
         {
             if(textboxmgr.isRead == false)
             {
-                GameObject.Find("UI").transform.Find("Canvas").
+               GameObject.Find("UI").transform.Find("Canvas").
                transform.Find("TextBox").gameObject.SetActive(true);
-                Time.timeScale = 0;
+               Time.timeScale = 0;
             }
         }
         else if(other.gameObject.tag.Equals("enemy"))
