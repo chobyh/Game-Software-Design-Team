@@ -16,14 +16,11 @@ public class CharactorController : MonoBehaviour {
 
     void Start () {
         animator = GetComponent<Animator>();
-        //ray = GetComponent<Ray2D>();
-        //raycasthit = GetComponent<RaycastHit2D>();
     }
 	
 	// Update is called once per frame
 	void Update () {
         moveChar();
-        FrontCheck();
     }
 
     void moveChar()
@@ -59,12 +56,20 @@ public class CharactorController : MonoBehaviour {
         }
     }
 
-    void OnTriggerExit2D()
+    void OnCollisionEnter2D(Collision2D other)
     {
+        Debug.Log("부딪힘");
+        if (Input.GetButton("Jump"))
+        {
+            Debug.Log("상호작용");
+            textboxmgr = other.gameObject.GetComponentInChildren<TextBoxMgr>();
+            if (textboxmgr.isRead == false)
+            {
+                GameObject.Find("UI").transform.Find("Canvas").
+                transform.Find("TextBox").gameObject.SetActive(true);
+                Time.timeScale = 0;
+            }
+        }
     }
 
-    void FrontCheck()
-    {
-        if (Input.GetKeyDown(KeyCode.Space)) { }
-    }
 }
