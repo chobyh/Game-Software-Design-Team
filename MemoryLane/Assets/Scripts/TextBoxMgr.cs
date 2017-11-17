@@ -216,7 +216,7 @@ public class TextBoxMgr : MonoBehaviour
     //버튼 ON함수
     void EnextButton()
     {
-        if (nextbutton == false)
+        if (nextbutton == false )
         {
             GameObject.Find("UI").transform.Find("Canvas").
             transform.Find("TextBox").transform.Find("Button").

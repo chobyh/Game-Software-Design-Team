@@ -7,8 +7,6 @@ public class CharactorController : MonoBehaviour {
     Animator animator;
 
     public GameObject sprite;
-    public Ray2D ray;
-    public RaycastHit2D raycasthit;
 
     public float speed;
 
@@ -52,16 +50,14 @@ public class CharactorController : MonoBehaviour {
         }
         else if(other.gameObject.tag.Equals("enemy"))
         {
-            Application.LoadLevel("Game_Over");
+            Application.LoadLevel("GameOver");
         }
     }
 
-    void OnCollisionEnter2D(Collision2D other)
+    void OnCollisionStay2D(Collision2D other)
     {
-        Debug.Log("부딪힘");
         if (Input.GetButton("Jump"))
         {
-            Debug.Log("상호작용");
             textboxmgr = other.gameObject.GetComponentInChildren<TextBoxMgr>();
             if (textboxmgr.isRead == false)
             {
