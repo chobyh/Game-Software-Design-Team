@@ -9,6 +9,7 @@ TagManager:
   - Canvas
   - Dropbox
   - Item
+  - Frame
   layers:
   - Default
   - TransparentFX

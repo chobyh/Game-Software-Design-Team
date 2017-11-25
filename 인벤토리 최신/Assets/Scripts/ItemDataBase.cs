@@ -8,9 +8,13 @@ public class ItemDataBase : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		items.Add (new Item ("벽돌1", 0, "힌트", 10, 10, 1, Item.ItemType.Hint));
-		items.Add (new Item ("004_tree", 1, "Good Hint", 10, 10, 1, Item.ItemType.Hint));
-		items.Add (new Item ("005_light", 2, "Best Hint", 10, 10, 1, Item.ItemType.Collects));
-		items.Add (new Item ("006_electricity", 3, "Better Hint", 10, 10, 1, Item.ItemType.Hint));		 
+		items.Add (new Item ("씨앗", 1, "힌트", 10, 10, 1, Item.ItemType.Hint));
+		items.Add (new Item ("나무", 2, "힌트", 10, 10, 1, Item.ItemType.Hint));
+		items.Add (new Item ("사과", 3, "힌트", 10, 10, 1, Item.ItemType.Hint));
+		items.Add (new Item ("씨앗", 4, "힌트", 10, 10, 1, Item.ItemType.Hint));
+		items.Add (new Item ("아이스", 5, "힌트", 10, 10, 1, Item.ItemType.Hint));
+		items.Add (new Item ("알약", 6, "힌트", 10, 10, 1, Item.ItemType.Hint));
+
 	}
 
 }
