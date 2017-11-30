@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameOver : MonoBehaviour {
 
@@ -16,6 +17,6 @@ public class GameOver : MonoBehaviour {
 
     public void OnClickEnd()
     {
-        Application.LoadLevel("Main_Title");
+		SceneManager.LoadScene("Main_Title");
     }
 }
