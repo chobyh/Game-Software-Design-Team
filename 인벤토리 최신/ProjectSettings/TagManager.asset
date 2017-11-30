@@ -10,6 +10,7 @@ TagManager:
   - Dropbox
   - Item
   - Frame
+  - DailyLog
   layers:
   - Default
   - TransparentFX

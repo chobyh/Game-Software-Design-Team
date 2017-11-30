@@ -24,7 +24,7 @@ public class Inventory : MonoBehaviour {
 
 	void Update()
 	{
-		int t = 0;
+		
 		if (draggingItem) {
 			Vector3 posi = (Input.mousePosition - GameObject.FindGameObjectWithTag ("Canvas").GetComponent<RectTransform> ().localPosition);
 			draggedItemGameObject.GetComponent<RectTransform> ().localPosition = new Vector3 (posi.x + 15, posi.y - 15, posi.z);
@@ -103,7 +103,7 @@ public class Inventory : MonoBehaviour {
 				slot.GetComponent<SlotScript> ().slotNumber = Slotamount;
 				Slots.Add (slot);
 				Items.Add (new Item ());
-				slot.transform.parent = this.gameObject.transform;
+				slot.transform.SetParent(this.gameObject.transform);
 				slot.name = "Slot" + i + "." + k;
 				slot.GetComponent<RectTransform> ().localPosition = new Vector3 (x, y, 0);
 				x = x + 30;
@@ -115,13 +115,13 @@ public class Inventory : MonoBehaviour {
 			}
 		}
 		addItem (0);
-		addItem (1);
+		/*addItem (1);
 		addItem (2);
 		addItem (3);
 		addItem (4);
 		addItem (5);
 		addItem (6);
-
+*/
 	}
 
 	void addItem(int id)
