@@ -14,6 +14,7 @@ public class TextBoxMgr : MonoBehaviour
 
     public Text theName;//이름 Text 오브젝트
     public Text theDialogue;//대화 Text 오브젝트
+	public Button nextButton;
 
     public string[] NtextLines;//이름
     public string[] DtextLines;//대사
@@ -43,7 +44,7 @@ public class TextBoxMgr : MonoBehaviour
     #endregion
 
     //스크립트 활성화마다 실행함수
-    void OnEnable()
+    public void SetDialog()
     {
         currentLine = 0;//대화상태 초기화
         ReadyDialogue();
@@ -52,6 +53,7 @@ public class TextBoxMgr : MonoBehaviour
     //대화창 준비함수
     void ReadyDialogue()
     {
+		nextButton.onClick.AddListener (() => nextButtonControl ());
         if (endAtLine == 0)
         {
             endAtLine = NtextLines.Length - 1;//배열길이로 초기화
@@ -254,10 +256,7 @@ public class TextBoxMgr : MonoBehaviour
     //대화창
     #region TextBox
     //대화창 활성화 함수
-    public void EnableTextBox()
-    {
-        OnEnable();
-    }
+
 
 
 

@@ -41,6 +41,7 @@ public class CharactorController : MonoBehaviour {
         if (other.gameObject.tag.Equals("event"))
         {
             textboxmgr = other.GetComponentInChildren<TextBoxMgr>();
+
             if (textboxmgr.isRead == false)
             {
                GameObject.Find("UI").transform.Find("Canvas").
@@ -59,10 +60,15 @@ public class CharactorController : MonoBehaviour {
         if (Input.GetButton("Jump"))
         {
             textboxmgr = other.gameObject.GetComponentInChildren<TextBoxMgr>();
+			if (textboxmgr == null)
+				return;
+			
+			Debug.Log (textboxmgr.transform.name);
             if (textboxmgr.isRead == false)
             {
                 GameObject.Find("UI").transform.Find("Canvas").
                 transform.Find("TextBox").gameObject.SetActive(true);
+				textboxmgr.SetDialog ();
                 Time.timeScale = 0;
             }
         }
