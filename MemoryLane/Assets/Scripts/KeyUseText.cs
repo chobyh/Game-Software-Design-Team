@@ -14,6 +14,7 @@ public class KeyUseText : MonoBehaviour {
 	void Update () {
 		if(Input.GetButtonDown("Jump"))
         {
+            //nextButton.onClick.AddListener(() => nextButtonControl());
             TextEventPrefab.gameObject.GetComponentInChildren<TextBoxMgr>().nextButtonControl();
         }
 	}

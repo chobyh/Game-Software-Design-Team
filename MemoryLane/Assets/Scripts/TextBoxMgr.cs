@@ -21,7 +21,7 @@ public class TextBoxMgr : MonoBehaviour
     public Sprite[] IFile;//일러스트 파일 
 
     public int currentLine = 0;//진행중인 대사
-    public int endAtLine;//마지막 대사
+    public int endAtLine = 0;//마지막 대사
 
     public bool isChoiceSentence = false;//선택문이 있는가
     public int setChoice = 0;//몇번째 문장에 선택문을 쓸것인가
@@ -53,6 +53,7 @@ public class TextBoxMgr : MonoBehaviour
     //대화창 준비함수
     void ReadyDialogue()
     {
+        endAtLine = NtextLines.Length - 1;
 		nextButton.onClick.AddListener (() => nextButtonControl ());
         if (endAtLine == 0)
         {
@@ -103,8 +104,9 @@ public class TextBoxMgr : MonoBehaviour
 
             theName.text = NtextLines[currentLine];
 
-            if (currentLine == endAtLine)//같을때
+            if (currentLine == endAtLine)//같을때 endAtLine 문제!
             {
+                Debug.Log(endAtLine);
                 Time.timeScale = 1;
                 isRead = true;
                 DisableTextBox();//비활성화 함수
@@ -264,6 +266,7 @@ public class TextBoxMgr : MonoBehaviour
     public void DisableTextBox()
     {
         currentLine = 0;//대화상태 초기화
+
 
         if (ActiveControler == false)//컨트롤러가 꺼있으면
         {
