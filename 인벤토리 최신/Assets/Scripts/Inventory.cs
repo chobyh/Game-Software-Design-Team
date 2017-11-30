@@ -8,6 +8,7 @@ public class Inventory : MonoBehaviour {
 	public List<GameObject> Slots = new List<GameObject> ();
 	public List<Item> Items = new List<Item>();
 	public GameObject slots;
+
 	ItemDataBase database;
 	int x = -62;
 	int y = 310;
@@ -18,19 +19,53 @@ public class Inventory : MonoBehaviour {
 	public Item draggedItem;
 	public int indexOfDraggedItem;
 
+	public int n = 0;
+
+
 	void Update()
 	{
+		int t = 0;
 		if (draggingItem) {
 			Vector3 posi = (Input.mousePosition - GameObject.FindGameObjectWithTag ("Canvas").GetComponent<RectTransform> ().localPosition);
-			draggedItemGameObject.GetComponent<RectTransform> ().localPosition = new Vector3(posi.x + 15, posi.y -15, posi.z);
+			draggedItemGameObject.GetComponent<RectTransform> ().localPosition = new Vector3 (posi.x + 15, posi.y - 15, posi.z);
 		}
 
-	}
+		if (Slots [n].transform.GetChild (1).gameObject.activeInHierarchy == false) 
+		{ 
+			if (Input.GetKeyDown (KeyCode.Z)) {
+				Slots [n].transform.GetChild (1).gameObject.SetActive (true);
+			} 
+		} else {
+			if (Input.GetKeyDown (KeyCode.Z)) {
+				Slots [n].transform.GetChild (1).gameObject.SetActive (false);
+				n = 0;
+			} 
+		}
+			if (Input.GetKeyDown (KeyCode.RightArrow) == true) {
+				Slots [n + 1].transform.GetChild (1).gameObject.SetActive (true);
+				Slots [n].transform.GetChild (1).gameObject.SetActive (false);
+				n = n + 1;
+			} else if (Input.GetKeyDown (KeyCode.LeftArrow) == true) {
+				Slots [n - 1].transform.GetChild (1).gameObject.SetActive (true);
+				Slots [n].transform.GetChild (1).gameObject.SetActive (false);
+				n = n - 1; 
+			} else if (Input.GetKeyDown (KeyCode.DownArrow) == true) {
+				Slots [n + 5].transform.GetChild (1).gameObject.SetActive (true);
+				Slots [n].transform.GetChild (1).gameObject.SetActive (false);
+				n = n + 5;
+			} else if (Input.GetKeyDown (KeyCode.UpArrow) == true) {
+				Slots [n - 5].transform.GetChild (1).gameObject.SetActive (true);
+				Slots [n].transform.GetChild (1).gameObject.SetActive (false);
+				n = n - 5;
+			} 
+		}
+
 
 	public void showTooltip(Vector3 toolPosition, Item item)
 	{
 		tooltip.SetActive (true);
-		tooltip.transform.GetComponent<RectTransform> ().localPosition = new Vector3 (toolPosition.x + 185, toolPosition.y - 180, toolPosition.z );
+		tooltip.transform.GetComponent<RectTransform> ().localPosition = new Vector3 (toolPosition.x + 190, toolPosition.y - 195, toolPosition.z );
+		//toolPosition.x = toolPosition.x + 30;
 
 		tooltip.transform.GetChild (0).GetComponent<Text> ().text = item.itemName;
 		tooltip.transform.GetChild (1).GetComponent<Text> ().text = item.itemDesc;
@@ -51,10 +86,12 @@ public class Inventory : MonoBehaviour {
 		draggingItem = false;
 		draggedItemGameObject.SetActive (false);
 	}
+
 	public void closeTooltip()
 	{
 		tooltip.SetActive (false);
 	}
+
 	// Use this for initialization
 	void Start () {
 
@@ -63,9 +100,9 @@ public class Inventory : MonoBehaviour {
 		for (int i = 1; i < 7; i++) {
 			for (int k = 1; k < 6; k++) {
 				GameObject slot = (GameObject)Instantiate (slots);
-				slot.GetComponent<SlotScript>().slotNumber = Slotamount;
+				slot.GetComponent<SlotScript> ().slotNumber = Slotamount;
 				Slots.Add (slot);
-				Items.Add (new Item());
+				Items.Add (new Item ());
 				slot.transform.parent = this.gameObject.transform;
 				slot.name = "Slot" + i + "." + k;
 				slot.GetComponent<RectTransform> ().localPosition = new Vector3 (x, y, 0);
@@ -79,6 +116,12 @@ public class Inventory : MonoBehaviour {
 		}
 		addItem (0);
 		addItem (1);
+		addItem (2);
+		addItem (3);
+		addItem (4);
+		addItem (5);
+		addItem (6);
+
 	}
 
 	void addItem(int id)

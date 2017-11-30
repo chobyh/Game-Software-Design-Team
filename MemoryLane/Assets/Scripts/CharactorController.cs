@@ -37,11 +37,11 @@ public class CharactorController : MonoBehaviour {
     }
 
     void OnTriggerEnter2D(Collider2D other)
-    {
-        textboxmgr = other.GetComponentInChildren<TextBoxMgr>();
+    {  
         if (other.gameObject.tag.Equals("event"))
         {
-            if(textboxmgr.isRead == false)
+            textboxmgr = other.GetComponentInChildren<TextBoxMgr>();
+            if (textboxmgr.isRead == false)
             {
                GameObject.Find("UI").transform.Find("Canvas").
                transform.Find("TextBox").gameObject.SetActive(true);

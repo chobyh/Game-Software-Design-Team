@@ -42,13 +42,12 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
 			inventory.Items [slotNumber] = inventory.draggedItem;
 			inventory.closeDraggedItem();
 		}
-				
 	}
 	public void OnPointerEnter(PointerEventData data)
 	{
 		if (inventory.Items [slotNumber].itemName != null && !inventory.draggingItem) 
 		{ 
-			inventory.showTooltip (inventory.Slots [slotNumber].GetComponent<RectTransform> ().localPosition, inventory.Items [slotNumber]);
+			//inventory.showTooltip (inventory.Slots [slotNumber].GetComponent<RectTransform> ().localPosition, inventory.Items [slotNumber]);
 		}
 	}
 
