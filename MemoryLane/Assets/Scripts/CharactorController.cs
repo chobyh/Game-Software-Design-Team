@@ -6,7 +6,8 @@ public class CharactorController : MonoBehaviour {
     // Use this for initialization
     Animator animator;
 
-    public GameObject sprite;
+    public AudioSource audio;
+    public AudioClip walkSound;
 
     public float speed;
 
@@ -14,6 +15,8 @@ public class CharactorController : MonoBehaviour {
 
     void Start () {
         animator = GetComponent<Animator>();
+        audio = GetComponent<AudioSource>();
+        audio.clip = walkSound;
     }
 	
 	// Update is called once per frame
@@ -29,10 +32,12 @@ public class CharactorController : MonoBehaviour {
         if (xMove != 0.0f || yMove != 0.0f)
         {
             animator.SetBool("Move", true);
+            if (!audio.isPlaying) { audio.Play(); }
         }
         else
         {
             animator.SetBool("Move", false);
+            audio.Stop();
         }
     }
 

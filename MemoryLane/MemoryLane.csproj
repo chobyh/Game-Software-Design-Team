@@ -81,6 +81,7 @@
     <Compile Include="Assets\Angie Sprite\EditorScripts\OpenMoreGames.cs" />
     <Compile Include="Assets\Angie Sprite\Scripts\ButtonNextAnim.cs" />
     <Compile Include="Assets\Angie Sprite\Scripts\Enums.cs" />
+    <Compile Include="Assets\Scripts\CameraChanger.cs" />
     <Compile Include="Assets\Scripts\CharactorController.cs" />
     <Compile Include="Assets\Scripts\ChaseCharacter.cs" />
     <Compile Include="Assets\Scripts\GameOver.cs" />
