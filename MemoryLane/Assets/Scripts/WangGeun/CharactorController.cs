@@ -61,10 +61,11 @@ public class CharactorController : MonoBehaviour {
             Application.LoadLevel("GameOver");
         }
     }
-
+    
     void OnCollisionStay2D(Collision2D other)
     {
-        if (Input.GetButton("Jump"))
+        textboxmgr.isRead = false;
+        if (Input.GetButtonDown("Jump"))
         {
             textboxmgr = other.gameObject.GetComponentInChildren<TextBoxMgr>();
 			if (textboxmgr == null)
@@ -77,6 +78,8 @@ public class CharactorController : MonoBehaviour {
                 Time.timeScale = 0;
             }
         }
+        DestroyObject(other.transform.parent);
     }
+    
 
 }

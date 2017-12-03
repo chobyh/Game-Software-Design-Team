@@ -81,14 +81,12 @@
     <Compile Include="Assets\Angie Sprite\EditorScripts\OpenMoreGames.cs" />
     <Compile Include="Assets\Angie Sprite\Scripts\ButtonNextAnim.cs" />
     <Compile Include="Assets\Angie Sprite\Scripts\Enums.cs" />
-    <Compile Include="Assets\Scripts\CameraChanger.cs" />
-    <Compile Include="Assets\Scripts\CharactorController.cs" />
-    <Compile Include="Assets\Scripts\ChaseCharacter.cs" />
-    <Compile Include="Assets\Scripts\GameOver.cs" />
-    <Compile Include="Assets\Scripts\GameStart.cs" />
-    <Compile Include="Assets\Scripts\KeyUseText.cs" />
-    <Compile Include="Assets\Scripts\LantonController.cs" />
-    <Compile Include="Assets\Scripts\TextBoxMgr.cs" />
+    <Compile Include="Assets\Scripts\WangGeun\CharactorController.cs" />
+    <Compile Include="Assets\Scripts\WangGeun\ChaseCharacter.cs" />
+    <Compile Include="Assets\Scripts\WangGeun\GameOver.cs" />
+    <Compile Include="Assets\Scripts\WangGeun\GameStart.cs" />
+    <Compile Include="Assets\Scripts\WangGeun\LantonController.cs" />
+    <Compile Include="Assets\Scripts\WangGeun\TextBoxMgr.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Target Name="GenerateTargetFrameworkMonikerAttribute" />

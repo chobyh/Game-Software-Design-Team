@@ -41,6 +41,8 @@ public class TextBoxMgr : MonoBehaviour
 
     public bool isRead = false;
 
+    UnityEngine.Events.UnityAction action;
+
     #endregion
 
     //스크립트 활성화마다 실행함수
@@ -53,8 +55,9 @@ public class TextBoxMgr : MonoBehaviour
     //대화창 준비함수
     void ReadyDialogue()
     {
-        endAtLine = NtextLines.Length - 1;
-		nextButton.onClick.AddListener (() => nextButtonControl ());
+        action = () => {; nextButtonControl(); };
+        nextButton.onClick.AddListener (action); // 여기서 endAtLine이 호출 되어 실행 되는듯!
+
         if (endAtLine == 0)
         {
             endAtLine = NtextLines.Length - 1;//배열길이로 초기화
@@ -106,9 +109,9 @@ public class TextBoxMgr : MonoBehaviour
 
             if (currentLine == endAtLine)//같을때 endAtLine 문제!
             {
-                Debug.Log(endAtLine);
                 Time.timeScale = 1;
                 isRead = true;
+                nextButton.onClick.RemoveListener(action);
                 DisableTextBox();//비활성화 함수
             }
             else
