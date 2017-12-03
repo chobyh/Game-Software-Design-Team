@@ -11,6 +11,19 @@ public class CharactorController : MonoBehaviour {
 
     public float speed;
 
+    bool haveDiary = false;
+    bool haveDoorKey = false;
+    bool haveRemote = false;
+    bool haveBabyDoll = false;
+    bool haveShovel = false;
+    bool haveFathersLetter = false;
+    bool haveDaughtersLetter = false;
+    bool havePolice = false;
+    bool haveAward = false;
+    bool haveSketchBook = false;
+    bool havePicture = false;
+
+
     private TextBoxMgr textboxmgr;
 
     void Start () {
