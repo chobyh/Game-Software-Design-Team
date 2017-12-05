@@ -114,30 +114,25 @@ public class Inventory : MonoBehaviour {
 				Slotamount++;
 			}
 		}
-		addItem (0);
-		/*addItem (1);
-		addItem (2);
-		addItem (3);
-		addItem (4);
-		addItem (5);
-		addItem (6);
-*/
+        addItem(0);
+		
+		
 	}
 
-	void addItem(int id)
-	{
-		
-		for (int i = 0; i < database.items.Count; i++) 
-		{
-			
-			if (database.items [i].itemID == id) 
-			{
-				Item item = database.items [i];
-				addItemAtEmptySlot (item);
-				break;
-			}
-		}
-	}
+    void addItem(int id)
+    {
+
+        for (int i = 0; i < database.items.Count; i++)
+        {
+
+            if (database.items[i].itemID == id)
+            {
+                Item item = database.items[i];
+                addItemAtEmptySlot(item);
+                break;
+            }
+        }
+    }
 
 	void addItemAtEmptySlot(Item item)
 	{

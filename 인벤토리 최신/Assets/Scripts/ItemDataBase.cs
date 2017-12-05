@@ -11,10 +11,10 @@ public class ItemDataBase : MonoBehaviour {
 		items.Add (new Item ("씨앗", 1, "힌트", 10, 10, 1, Item.ItemType.Hint));
 		items.Add (new Item ("나무", 2, "힌트", 10, 10, 1, Item.ItemType.Hint));
 		items.Add (new Item ("사과", 3, "힌트", 10, 10, 1, Item.ItemType.Hint));
-		items.Add (new Item ("씨앗", 4, "힌트", 10, 10, 1, Item.ItemType.Hint));
-		items.Add (new Item ("아이스", 5, "힌트", 10, 10, 1, Item.ItemType.Hint));
-		items.Add (new Item ("알약", 6, "힌트", 10, 10, 1, Item.ItemType.Hint));
 
-	}
+        //일지 아이템
+        items.Add(new Item("일지", 4, "힌트", 10, 10, 1, Item.ItemType.Hint));
+
+    }
 
 }

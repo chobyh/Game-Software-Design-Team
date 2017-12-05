@@ -8,8 +8,8 @@ public class KeyManager : MonoBehaviour {
 	public Inventory dailylog;
 	// Use this for initialization
 	void Start () {
-		inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
-		dailylog = GameObject.FindGameObjectWithTag("DailyLog").GetComponent<Inventory>();
+        inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        
 	}
 	
 	// Update is called once per frame
@@ -17,7 +17,8 @@ public class KeyManager : MonoBehaviour {
 		if (inventory.gameObject.activeInHierarchy == false) {
 			if (Input.GetKeyDown (KeyCode.I)) {
 				inventory.gameObject.SetActive (true);
-			}			
+              
+            }			
 		} else {
 			if (Input.GetKeyDown (KeyCode.I)) {
 				inventory.gameObject.SetActive (false);
@@ -25,7 +26,7 @@ public class KeyManager : MonoBehaviour {
 				inventory.n = 0;
 			}	
 		}
-		if (dailylog.gameObject.activeInHierarchy == false) {
+		/*if (dailylog.gameObject.activeInHierarchy == false) {
 			if (Input.GetKeyDown (KeyCode.Q)) {
 				dailylog.gameObject.SetActive (true);
 			}			
@@ -35,6 +36,6 @@ public class KeyManager : MonoBehaviour {
 				dailylog.Slots [dailylog.n].transform.GetChild (1).gameObject.SetActive (false);
 				dailylog.n = 0;
 			}	
-		}
+		}*/
 	}
 }
