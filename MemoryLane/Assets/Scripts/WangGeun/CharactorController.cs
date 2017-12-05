@@ -91,8 +91,5 @@ public class CharactorController : MonoBehaviour {
                 Time.timeScale = 0;
             }
         }
-        DestroyObject(other.transform.parent);
     }
-    
-
 }

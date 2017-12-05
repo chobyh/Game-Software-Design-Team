@@ -40,6 +40,7 @@ public class TextBoxMgr : MonoBehaviour
     public Image theImage;//이미지 오브젝트
 
     public bool isRead = false;
+	GameObject thisGameObject;
 
     UnityEngine.Events.UnityAction action;
 
@@ -50,6 +51,7 @@ public class TextBoxMgr : MonoBehaviour
     {
         currentLine = 0;//대화상태 초기화
         ReadyDialogue();
+		thisGameObject = this.gameObject.transform.parent.gameObject;
     }
 
     //대화창 준비함수
@@ -113,6 +115,7 @@ public class TextBoxMgr : MonoBehaviour
                 isRead = true;
                 nextButton.onClick.RemoveListener(action);
                 DisableTextBox();//비활성화 함수
+				Destroy(thisGameObject);
             }
             else
             {
