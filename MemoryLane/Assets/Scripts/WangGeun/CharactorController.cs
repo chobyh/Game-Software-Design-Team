@@ -11,6 +11,7 @@ public class CharactorController : MonoBehaviour {
 
     public float speed;
 
+	public bool haveLanton = false;
     bool haveDiary = false;
     bool haveDoorKey = false;
     bool haveRemote = false;
@@ -89,6 +90,29 @@ public class CharactorController : MonoBehaviour {
                 transform.Find("TextBox").gameObject.SetActive(true);
 				textboxmgr.SetDialog ();
                 Time.timeScale = 0;
+				if (other.transform.name.Equals ("Diary")) {
+					haveDiary = true;
+				} else if (other.transform.name.Equals ("Remote")) {
+					haveRemote = true;
+				} else if (other.transform.name.Equals ("BabyDoll")) {
+					haveBabyDoll = true;
+				} else if (other.transform.name.Equals ("Shovel")) {
+					haveShovel = true;
+				} else if (other.transform.name.Equals ("Father'sLetter")) {
+					haveFathersLetter = true;
+				} else if (other.transform.name.Equals ("Daughter'sLetter")) {
+					haveDaughtersLetter = true;
+				} else if (other.transform.name.Equals ("Police")) {
+					havePolice = true;
+				} else if (other.transform.name.Equals ("Award")) {
+					haveAward = true;
+				} else if (other.transform.name.Equals ("SketchBook")) {
+					haveSketchBook = true;
+				} else if (other.transform.name.Equals ("Picture")) {
+					havePicture = true;
+				} else if (other.transform.name.Equals ("Lanton")) {
+					haveLanton = true;
+				}
             }
         }
     }
