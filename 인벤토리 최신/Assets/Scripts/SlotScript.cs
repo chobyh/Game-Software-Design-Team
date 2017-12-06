@@ -4,11 +4,12 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.EventSystems;
 
-public class SlotScript : MonoBehaviour, IPointerDownHandler, IPointerEnterHandler, IPointerExitHandler, IDragHandler {
+public class SlotScript : MonoBehaviour {
 
 	public Item item;
 	Image itemImage;
 	public int slotNumber;
+	public int DailyslotNumber;
 	Inventory inventory;
 
 	// Use this for initialization
@@ -28,8 +29,16 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
 		else {
 			itemImage.enabled = false;	
 		}
-	}
-	public void OnPointerDown(PointerEventData data)
+
+		/*if (inventory.Items[DailyslotNumber].itemName != null) 
+		{
+			itemImage.enabled = true;
+			itemImage.sprite = inventory.Items[DailyslotNumber].itemIcon;
+		} 
+		else {
+			itemImage.enabled = false;	
+		}*/	}
+	/*public void OnPointerDown(PointerEventData data)
 	{
 		if (inventory.Items [slotNumber].itemName == null && inventory.draggingItem) 
 		{
@@ -66,5 +75,5 @@ public class SlotScript : MonoBehaviour, IPointerDownHandler, IPointerEnterHandl
 			inventory.showDraggedItem (inventory.Items [slotNumber], slotNumber);
 			inventory.Items [slotNumber] = new Item ();
 		}
-	}
+	}*/
 }
