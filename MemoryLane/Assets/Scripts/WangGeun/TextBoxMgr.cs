@@ -39,7 +39,6 @@ public class TextBoxMgr : MonoBehaviour
     public bool isSprite = false;//일러스트가 있는가
     public Image theImage;//이미지 오브젝트
 
-    public bool isRead = false;
 	GameObject thisGameObject;
 
     UnityEngine.Events.UnityAction action;
@@ -106,19 +105,19 @@ public class TextBoxMgr : MonoBehaviour
             {
                 theImage.sprite = IFile[currentLine];
             }
-
             theName.text = NtextLines[currentLine];
 
             if (currentLine == endAtLine)//같을때 endAtLine 문제!
             {
                 Time.timeScale = 1;
-                isRead = true;
                 nextButton.onClick.RemoveListener(action);
                 DisableTextBox();//비활성화 함수
-                if(thisGameObject.tag.Equals("item"))
-                {
-                    Destroy(thisGameObject);
-                }
+				if (thisGameObject.tag.Equals ("item")) {
+					Destroy (thisGameObject);
+				} else if (this.gameObject.tag.Equals ("event")) {
+					Destroy (this.gameObject);
+				}
+				Debug.Log("오브젝트삭제");
             }
             else
             {
@@ -159,6 +158,7 @@ public class TextBoxMgr : MonoBehaviour
 
             if (currentLine > endAtLine)//클때
             {
+				nextButton.onClick.RemoveListener(action);
                 DisableTextBox();//비활성화 함수
             }
         }

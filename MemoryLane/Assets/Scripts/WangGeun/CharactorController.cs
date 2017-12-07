@@ -24,6 +24,12 @@ public class CharactorController : MonoBehaviour {
     bool haveSketchBook = false;
     bool havePicture = false;
 
+	bool isreadClock = false;
+	bool isreadDeadMan = false;
+	bool isread = false;
+
+	public bool isHide = false;
+
 
     private TextBoxMgr textboxmgr;
 
@@ -59,16 +65,14 @@ public class CharactorController : MonoBehaviour {
     {  
         if (other.gameObject.tag.Equals("event"))
         {
-            textboxmgr = other.GetComponentInChildren<TextBoxMgr>();
+			
+          	textboxmgr = other.GetComponentInChildren<TextBoxMgr>();
             if (textboxmgr == null)
                 return;
-            if (textboxmgr.isRead == false)
-            {
-               GameObject.Find("UI").transform.Find("Canvas").
-               transform.Find("TextBox").gameObject.SetActive(true);
-               textboxmgr.SetDialog();
-               Time.timeScale = 0;
-            }
+            GameObject.Find("UI").transform.Find("Canvas").
+            transform.Find("TextBox").gameObject.SetActive(true);
+            textboxmgr.SetDialog();
+            Time.timeScale = 0;
         }
         else if(other.gameObject.tag.Equals("enemy"))
         {
@@ -78,42 +82,47 @@ public class CharactorController : MonoBehaviour {
     
     void OnCollisionStay2D(Collision2D other)
     {
-        textboxmgr.isRead = false;
-        if (Input.GetButtonDown("Jump"))
+		if (other.gameObject.tag.Equals ("Hide")) {
+			isHide = true;
+		}
+		else if (Input.GetButtonDown("Jump"))
         {
             textboxmgr = other.gameObject.GetComponentInChildren<TextBoxMgr>();
 			if (textboxmgr == null)
 				return;
-            if (textboxmgr.isRead == false)
-            {
-                GameObject.Find("UI").transform.Find("Canvas").
-                transform.Find("TextBox").gameObject.SetActive(true);
-				textboxmgr.SetDialog ();
-                Time.timeScale = 0;
-				if (other.transform.name.Equals ("Diary")) {
-					haveDiary = true;
-				} else if (other.transform.name.Equals ("Remote")) {
-					haveRemote = true;
-				} else if (other.transform.name.Equals ("BabyDoll")) {
-					haveBabyDoll = true;
-				} else if (other.transform.name.Equals ("Shovel")) {
-					haveShovel = true;
-				} else if (other.transform.name.Equals ("Father'sLetter")) {
-					haveFathersLetter = true;
-				} else if (other.transform.name.Equals ("Daughter'sLetter")) {
-					haveDaughtersLetter = true;
-				} else if (other.transform.name.Equals ("Police")) {
-					havePolice = true;
-				} else if (other.transform.name.Equals ("Award")) {
-					haveAward = true;
-				} else if (other.transform.name.Equals ("SketchBook")) {
-					haveSketchBook = true;
-				} else if (other.transform.name.Equals ("Picture")) {
-					havePicture = true;
-				} else if (other.transform.name.Equals ("Lanton")) {
-					haveLanton = true;
-				}
-            }
-        }
-    }
+            GameObject.Find("UI").transform.Find("Canvas").
+            transform.Find("TextBox").gameObject.SetActive(true);
+			textboxmgr.SetDialog ();
+            Time.timeScale = 0;
+
+			if (other.transform.name.Equals ("Diary")) {
+				haveDiary = true;
+			} else if (other.transform.name.Equals ("Remote")) {
+				haveRemote = true;
+			} else if (other.transform.name.Equals ("BabyDoll")) {
+				haveBabyDoll = true;
+			} else if (other.transform.name.Equals ("Shovel")) {
+				haveShovel = true;
+			} else if (other.transform.name.Equals ("Father'sLetter")) {
+				haveFathersLetter = true;
+			} else if (other.transform.name.Equals ("Daughter'sLetter")) {
+				haveDaughtersLetter = true;
+			} else if (other.transform.name.Equals ("Police")) {
+				havePolice = true;
+			} else if (other.transform.name.Equals ("Award")) {
+				haveAward = true;
+			} else if (other.transform.name.Equals ("SketchBook")) {
+				haveSketchBook = true;
+			} else if (other.transform.name.Equals ("Picture")) {
+				havePicture = true;
+			} else if (other.transform.name.Equals ("Lanton")) {
+				haveLanton = true;
+			}
+          }
+			
+	}
+	void OnCollisionOut2D (Collision2D other)
+	{
+		isHide = false;
+	}
 }

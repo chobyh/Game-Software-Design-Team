@@ -8,6 +8,8 @@ TagManager:
   - item
   - enemy
   - Door
+  - Object
+  - Hide
   layers:
   - Default
   - TransparentFX
