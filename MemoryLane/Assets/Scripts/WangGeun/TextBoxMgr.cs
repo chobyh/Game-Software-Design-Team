@@ -115,7 +115,10 @@ public class TextBoxMgr : MonoBehaviour
                 isRead = true;
                 nextButton.onClick.RemoveListener(action);
                 DisableTextBox();//비활성화 함수
-				Destroy(thisGameObject);
+                if(thisGameObject.tag.Equals("item"))
+                {
+                    Destroy(thisGameObject);
+                }
             }
             else
             {
