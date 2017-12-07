@@ -120,7 +120,7 @@ GameObject:
   - component: {fileID: 46951523}
   m_Layer: 0
   m_Name: Lanton
-  m_TagString: Untagged
+  m_TagString: item
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -567,12 +567,12 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - d
-  - d
+  - ???
+  - ???
   - 
   DtextLines:
-  - d
-  - d
+  - ???
+  - "1\uCE35\uC5D0\uC11C \uC778\uAE30\uCC99\uC774 \uB290\uAEF4\uC9C4\uB2E4."
   - 
   IFile:
   - {fileID: 0}
@@ -588,7 +588,6 @@ MonoBehaviour:
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!61 &137856447
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -660,8 +659,8 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
-  - "\uC0C1\uBBFC"
+  - ???
+  - ???
   - 
   DtextLines:
   - "\uB2F5\uB2F5\uD558\uB2E4. \uC8FD\uC74C\uC744 \uB208 \uC55E\uC5D0 \uB450\uACE0\uB3C4
@@ -670,8 +669,8 @@ MonoBehaviour:
   - "\uB3C4\uB300\uCCB4 \uB108\uB294 \uB204\uAD6C\uC600\uC9C0?"
   - 
   IFile:
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
   endAtLine: 2
@@ -683,7 +682,6 @@ MonoBehaviour:
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!61 &142960735
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -989,7 +987,7 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
+  - ???
   - 
   DtextLines:
   - "\uC544\uBE60\uC758 \uD3B8\uC9C0\uB97C \uC5BB\uC5C8\uB2E4."
@@ -998,16 +996,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
-  endAtLine: 3
+  endAtLine: 1
   isChoiceSentence: 1
-  setChoice: 4
+  setChoice: 2
   ActiveControler: 1
   canTyping: 1
   typingSpeed: 0
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!1 &318956575
 GameObject:
   m_ObjectHideFlags: 0
@@ -1622,7 +1619,61 @@ Transform:
   - {fileID: 957982005}
   - {fileID: 46951522}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &459987167
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 459987169}
+  - component: {fileID: 459987168}
+  m_Layer: 0
+  m_Name: Hide
+  m_TagString: Hide
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!61 &459987168
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 459987167}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0, y: 0}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0, y: 0}
+    oldSize: {x: 0, y: 0}
+    newSize: {x: 0, y: 0}
+    adaptiveTilingThreshold: 0
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1}
+  m_EdgeRadius: 0
+--- !u!4 &459987169
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 459987167}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -20.43, y: -0.61, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &465048778
 GameObject:
@@ -1802,7 +1853,7 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
+  - ???
   - 
   DtextLines:
   - "\uC0BD\uC744 \uC5BB\uC5C8\uB2E4."
@@ -1811,16 +1862,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
-  endAtLine: 3
+  endAtLine: 1
   isChoiceSentence: 1
-  setChoice: 4
+  setChoice: 2
   ActiveControler: 1
   canTyping: 1
   typingSpeed: 0
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!1 &654739943
 GameObject:
   m_ObjectHideFlags: 0
@@ -2174,7 +2224,7 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
+  - ???
   - 
   DtextLines:
   - "\uD45C\uCC3D\uC7A5\uC744 \uC5BB\uC5C8\uB2E4."
@@ -2183,16 +2233,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
-  endAtLine: 3
+  endAtLine: 1
   isChoiceSentence: 1
-  setChoice: 4
+  setChoice: 2
   ActiveControler: 1
   canTyping: 1
   typingSpeed: 0
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!1 &820218817
 GameObject:
   m_ObjectHideFlags: 0
@@ -2433,9 +2482,9 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
-  - "\uC0C1\uBBFC"
-  - "\uC0C1\uBBFC"
+  - ???
+  - ???
+  - ???
   - 
   DtextLines:
   - "\uC77C\uC9C0\uB97C \uC8FC\uC6E0\uB2E4. \uAE30\uC5B5\uC774 \uB098\uC9C0 \uC54A\uC73C\uB2C8
@@ -2461,7 +2510,6 @@ MonoBehaviour:
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!1 &900050970
 GameObject:
   m_ObjectHideFlags: 0
@@ -2515,7 +2563,7 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
+  - ???
   - 
   DtextLines:
   - "\uACBD\uCC30 \uBC30\uC9C0\uB97C \uC5BB\uC5C8\uB2E4."
@@ -2524,16 +2572,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
-  endAtLine: 3
+  endAtLine: 1
   isChoiceSentence: 1
-  setChoice: 4
+  setChoice: 2
   ActiveControler: 1
   canTyping: 1
   typingSpeed: 0
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!1 &900632545
 GameObject:
   m_ObjectHideFlags: 0
@@ -2980,7 +3027,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 966145916}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 14, y: -29.6, z: 0}
+  m_LocalPosition: {x: -9.2, y: -25.4, z: 0}
   m_LocalScale: {x: 5, y: 5, z: 1}
   m_Children:
   - {fileID: 2143353564}
@@ -2989,7 +3036,7 @@ Transform:
   - {fileID: 1518191207}
   - {fileID: 137856445}
   m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &987313507
 GameObject:
@@ -3142,7 +3189,7 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
+  - ???
   - 
   DtextLines:
   - "\uC544\uAE30 \uC778\uD615\uC744 \uC5BB\uC5C8\uB2E4."
@@ -3151,16 +3198,113 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
-  endAtLine: 3
+  endAtLine: 1
   isChoiceSentence: 1
-  setChoice: 4
+  setChoice: 2
   ActiveControler: 1
   canTyping: 1
   typingSpeed: 0
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
+--- !u!1 &1010285959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1010285960}
+  - component: {fileID: 1010285961}
+  - component: {fileID: 1010285962}
+  m_Layer: 0
+  m_Name: DeadMan
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1010285960
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010285959}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -21.98, y: -0.13, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_Children:
+  - {fileID: 1963372793}
+  m_Father: {fileID: 2119040134}
+  m_RootOrder: 1
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!212 &1010285961
+SpriteRenderer:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010285959}
+  m_Enabled: 1
+  m_CastShadows: 0
+  m_ReceiveShadows: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_Materials:
+  - {fileID: 10754, guid: 0000000000000000f000000000000000, type: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_SelectedEditorRenderState: 0
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 1
+  m_Sprite: {fileID: 21300000, guid: 28e185cd98cc88b49a314b84288eea5b, type: 3}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_FlipX: 0
+  m_FlipY: 0
+  m_DrawMode: 0
+  m_Size: {x: 6, y: 8}
+  m_AdaptiveModeThreshold: 0.5
+  m_SpriteTileMode: 0
+  m_WasSpriteAssigned: 1
+  m_MaskInteraction: 0
+--- !u!61 &1010285962
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1010285959}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: 0.07557011, y: -0.37787628}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 0, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 6, y: 8}
+    newSize: {x: 6, y: 8}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 1.7677975, y: 7.2442474}
+  m_EdgeRadius: 0
 --- !u!1 &1029390358
 GameObject:
   m_ObjectHideFlags: 0
@@ -3188,7 +3332,7 @@ Transform:
   m_Children:
   - {fileID: 1511025645}
   m_Father: {fileID: 0}
-  m_RootOrder: 2
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1091585907
 GameObject:
@@ -3272,7 +3416,7 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
+  - ???
   - 
   DtextLines:
   - "\uC2A4\uCF00\uCE58\uBD81\uC744 \uC5BB\uC5C8\uB2E4."
@@ -3281,16 +3425,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
-  endAtLine: 3
+  endAtLine: 1
   isChoiceSentence: 1
-  setChoice: 4
+  setChoice: 2
   ActiveControler: 1
   canTyping: 1
   typingSpeed: 0
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!1 &1142564860
 GameObject:
   m_ObjectHideFlags: 0
@@ -3359,11 +3502,11 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1142564860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -11.3, y: 11.1, z: 0}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 1}
+  m_LocalPosition: {x: -16.01, y: -4.74, z: 0}
+  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1142564863
 MonoBehaviour:
@@ -3376,7 +3519,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0d8fb26faa46f3a4fbe9c4acb981b2f0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0
+  speed: 1
 --- !u!58 &1142564864
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -3610,7 +3753,6 @@ MonoBehaviour:
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!1 &1200359763
 GameObject:
   m_ObjectHideFlags: 0
@@ -3657,15 +3799,15 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
-  - "\uC0C1\uBBFC"
-  - "\uC0C1\uBBFC"
-  - ' '
-  - "\uC0C1\uBBFC"
-  - ' '
-  - "\uC0C1\uBBFC"
-  - "\uC0C1\uBBFC"
-  - "\uC0C1\uBBFC"
+  - ???
+  - ???
+  - ???
+  - "\uAD18\uC885\uC2DC\uACC4"
+  - ???
+  - "\uAD18\uC885\uC2DC\uACC4"
+  - ???
+  - ???
+  - ???
   - 
   DtextLines:
   - "\uC228\uC774 \uB9C9\uD600 \uC628\uB2E4. \uB2F5\uB2F5\uD558\uB2E4. \uC8FD\uC74C\uC774
@@ -3682,15 +3824,15 @@ MonoBehaviour:
     \uB9C8\uC8FC\uD560 \uC218 \uC788\uB294 \uAC74\uAC00?"
   - 
   IFile:
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
   endAtLine: 9
@@ -3702,7 +3844,6 @@ MonoBehaviour:
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!61 &1200359766
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4548,7 +4689,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.25, y: 0.28}
+    oldSize: {x: 0.48, y: 0.48}
     newSize: {x: 9.2, y: 7.2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -4703,6 +4844,79 @@ Transform:
   m_Father: {fileID: 1675360306}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1496708650
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1680561042576356, guid: 1fee3cd5a78478944bf845fcddeeb975,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1496708651}
+  - component: {fileID: 1496708652}
+  m_Layer: 0
+  m_Name: TextEvent
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1496708651
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224012461814187622, guid: 1fee3cd5a78478944bf845fcddeeb975,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1496708650}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 0.09644666}
+  m_Children: []
+  m_Father: {fileID: 2095100739}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 10.481663, y: 17.901665}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1496708652
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114944277001608590, guid: 1fee3cd5a78478944bf845fcddeeb975,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1496708650}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a873a45ac3d68294bb661f0c1d791f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 1689079087}
+  theName: {fileID: 433187716}
+  theDialogue: {fileID: 1220307580}
+  nextButton: {fileID: 820218819}
+  NtextLines:
+  - ???
+  - 
+  DtextLines:
+  - "\uB180\uB78D\uAC8C\uB3C4 \uB315 \uC18C\uB9AC\uB97C \uB0B4\uB358 \uAD18\uC885\uC2DC\uACC4\uC758
+    \uCD08\uCE68\uC740 12\uC2DC\uC5D0 \uBA48\uCDB0 \uC6C0\uC9C1\uC774\uC9C0 \uC54A\uACE0
+    \uC788\uC5C8\uB2E4."
+  - 
+  IFile:
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 0}
+  currentLine: 1
+  endAtLine: 1
+  isChoiceSentence: 1
+  setChoice: 2
+  ActiveControler: 1
+  canTyping: 1
+  typingSpeed: 0
+  BwaitTime: 0
+  isSprite: 1
+  theImage: {fileID: 465048780}
 --- !u!1 &1511025639
 GameObject:
   m_ObjectHideFlags: 0
@@ -4806,6 +5020,7 @@ MonoBehaviour:
   walkSound: {fileID: 8300000, guid: 4b96e3bb78983464288870050186a07f, type: 3}
   speed: 5
   haveLanton: 0
+  isHide: 0
 --- !u!95 &1511025643
 Animator:
   serializedVersion: 3
@@ -4989,13 +5204,13 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
+  - ???
   - 
   DtextLines:
   - "\u2026.?"
   - 
   IFile:
-  - {fileID: 0}
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
   endAtLine: 0
@@ -5007,7 +5222,6 @@ MonoBehaviour:
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!61 &1518191209
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -5200,7 +5414,7 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
+  - ???
   - 
   DtextLines:
   - "\uB9AC\uBAA8\uCF58\uC744 \uC5BB\uC5C8\uB2E4."
@@ -5209,16 +5423,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
-  endAtLine: 3
+  endAtLine: 1
   isChoiceSentence: 1
-  setChoice: 4
+  setChoice: 2
   ActiveControler: 1
   canTyping: 1
   typingSpeed: 0
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!1 &1646500508
 GameObject:
   m_ObjectHideFlags: 0
@@ -5435,8 +5648,8 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
       Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
-  m_Sprite: {fileID: 0}
-  m_Type: 1
+  m_Sprite: {fileID: 21300000, guid: 9b3939a9f5fa5b541ba8d3214bfca036, type: 3}
+  m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
   m_FillMethod: 4
@@ -5728,31 +5941,25 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
-  - "\uC0C1\uBBFC"
-  - "\uC0C1\uBBFC"
+  - ???
   - 
   DtextLines:
-  - lanton
-  - lanton
-  - lanton
+  - "\uB79C\uD134\uC744 \uC5BB\uC5C8\uB2E4. \uCEE8\uD2B8\uB864\uC744 \uB20C\uB7EC
+    \uAED0\uB2E4 \uCF30\uB2E4 \uD560 \uC218 \uC788\uB2E4."
   - 
   IFile:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
   currentLine: 1
-  endAtLine: 3
+  endAtLine: 1
   isChoiceSentence: 1
-  setChoice: 4
+  setChoice: 2
   ActiveControler: 1
   canTyping: 1
   typingSpeed: 0
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!1 &1895089927
 GameObject:
   m_ObjectHideFlags: 0
@@ -5991,7 +6198,7 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
+  - ???
   - 
   DtextLines:
   - "\uB538\uC758 \uD3B8\uC9C0\uB97C \uC5BB\uC5C8\uB2E4."
@@ -6000,16 +6207,87 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
-  endAtLine: 3
+  endAtLine: 1
   isChoiceSentence: 1
-  setChoice: 4
+  setChoice: 2
   ActiveControler: 1
   canTyping: 1
   typingSpeed: 0
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
+--- !u!1 &1963372792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 1680561042576356, guid: 1fee3cd5a78478944bf845fcddeeb975,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 1963372793}
+  - component: {fileID: 1963372794}
+  m_Layer: 0
+  m_Name: TextEvent (1)
+  m_TagString: Object
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1963372793
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 224012461814187622, guid: 1fee3cd5a78478944bf845fcddeeb975,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963372792}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 15, y: 15, z: 0.28934}
+  m_Children: []
+  m_Father: {fileID: 1010285960}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 193.8115, y: 283.38892}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1963372794
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 114944277001608590, guid: 1fee3cd5a78478944bf845fcddeeb975,
+    type: 2}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1963372792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a873a45ac3d68294bb661f0c1d791f41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  textBox: {fileID: 1689079087}
+  theName: {fileID: 433187716}
+  theDialogue: {fileID: 1220307580}
+  nextButton: {fileID: 820218819}
+  NtextLines:
+  - ???
+  - 
+  DtextLines:
+  - "\uBC27\uC904\uC774 \uBAA9\uC5D0 \uCE6D\uCE6D \uAC10\uC740 \uCC44 \uACF5\uC911\uC5D0
+    \uB9E4\uB2EC\uB824\uC788\uB294 \uB0B4\uAC00 \uBCF4\uC778\uB2E4."
+  - 
+  IFile:
+  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 0}
+  currentLine: 1
+  endAtLine: 1
+  isChoiceSentence: 1
+  setChoice: 2
+  ActiveControler: 1
+  canTyping: 1
+  typingSpeed: 0
+  BwaitTime: 0
+  isSprite: 1
+  theImage: {fileID: 465048780}
 --- !u!1 &1975829101
 GameObject:
   m_ObjectHideFlags: 0
@@ -6137,7 +6415,7 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
+  - ???
   - 
   DtextLines:
   - "\uD604\uAD00\uD0A4\uB97C \uC5BB\uC5C8\uB2E4."
@@ -6146,16 +6424,15 @@ MonoBehaviour:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
   currentLine: 1
-  endAtLine: 2
+  endAtLine: 1
   isChoiceSentence: 1
-  setChoice: 3
+  setChoice: 2
   ActiveControler: 1
   canTyping: 1
   typingSpeed: 0
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!1 &1978162663
 GameObject:
   m_ObjectHideFlags: 0
@@ -6494,7 +6771,7 @@ GameObject:
   - component: {fileID: 2095100737}
   m_Layer: 0
   m_Name: clock
-  m_TagString: item
+  m_TagString: Object
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6572,12 +6849,43 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2095100736}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -20.39, y: 1.77, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -20.39, y: 1.7700005, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
-  m_Children: []
+  m_Children:
+  - {fileID: 1496708651}
+  m_Father: {fileID: 2119040134}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &2119040133
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 5
+  m_Component:
+  - component: {fileID: 2119040134}
+  m_Layer: 0
+  m_Name: Objects
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2119040134
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2119040133}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 2095100739}
+  - {fileID: 1010285960}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2127799425
 GameObject:
@@ -6682,9 +6990,9 @@ MonoBehaviour:
   theDialogue: {fileID: 1220307580}
   nextButton: {fileID: 820218819}
   NtextLines:
-  - "\uC0C1\uBBFC"
-  - "\uC0C1\uBBFC"
-  - "\uC0C1\uBBFC"
+  - ???
+  - ???
+  - ???
   - ' '
   DtextLines:
   - "\uC228\uC774 \uB9C9\uD600 \uC628\uB2E4.  \uADF8 \uC640\uC911\uC5D0 \uACE0\uD1B5
@@ -6708,7 +7016,6 @@ MonoBehaviour:
   BwaitTime: 0
   isSprite: 1
   theImage: {fileID: 465048780}
-  isRead: 0
 --- !u!61 &2143353566
 BoxCollider2D:
   m_ObjectHideFlags: 0
