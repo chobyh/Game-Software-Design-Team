@@ -46,12 +46,25 @@ public class CharactorController : MonoBehaviour {
 
     void moveChar()
     {
+        Vector3 scale = transform.localScale;
         float xMove = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float yMove = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         this.transform.Translate(new Vector2(xMove, yMove));
         if (xMove != 0.0f || yMove != 0.0f)
         {
-            animator.SetBool("Move", true);
+            scale.z = 1;
+            if(xMove < 0)
+            {
+                scale.x = -Mathf.Abs(scale.x);
+                transform.localScale = scale;
+                animator.SetBool("Move", true);
+            }
+            else
+            {
+                scale.x = Mathf.Abs(scale.x);
+                transform.localScale = scale;
+                animator.SetBool("Move", true);
+            }
             if (!audio.isPlaying) { audio.Play(); }
         }
         else

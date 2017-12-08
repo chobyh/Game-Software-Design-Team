@@ -117,7 +117,6 @@ public class TextBoxMgr : MonoBehaviour
 				} else if (this.gameObject.tag.Equals ("event")) {
 					Destroy (this.gameObject);
 				}
-				Debug.Log("오브젝트삭제");
             }
             else
             {
