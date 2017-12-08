@@ -24,9 +24,9 @@ public class CharactorController : MonoBehaviour {
     bool haveSketchBook = false;
     bool havePicture = false;
 
-	bool isreadClock = false;
-	bool isreadDeadMan = false;
-	bool isread = false;
+    public bool isreadClock = false;
+    public bool isreadDeadMan = false;
+    public bool isread = false;
 
 	public bool isHide = false;
 
@@ -131,6 +131,15 @@ public class CharactorController : MonoBehaviour {
 			} else if (other.transform.name.Equals ("Lanton")) {
 				haveLanton = true;
 			}
+
+            if(other.transform.name.Equals("Clock"))
+            {
+                isreadClock = true;
+            }
+            else if(other.transform.name.Equals("DeadMan"))
+            {
+                isreadDeadMan = true;
+            }
           }
 			
 	}
