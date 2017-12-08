@@ -6,6 +6,7 @@ public class EventManager : MonoBehaviour {
 
     GameObject PlayerObject;
     CharactorController EventFlow;
+    public GameObject Door1;
     int index = 0;
 
     public GameObject[] DynamicTextEvent;
@@ -26,7 +27,9 @@ public class EventManager : MonoBehaviour {
         if(EventFlow.isreadClock && EventFlow.isreadDeadMan && index == 0)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
+            index++;
+            Door1.GetComponent<Animator>().SetBool("isOpened", true);
         }
-        index++;
+        
     }
 }
