@@ -8,8 +8,7 @@ public class KeyManager : MonoBehaviour {
 	public DailyLog dailylog;
 	// Use this for initialization
 	void Start () {
-        //inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
-        //dailylog = GameObject.FindGameObjectWithTag("DailyLog").GetComponent<DailyLog>();
+
     }
 	
 	// Update is called once per frame
@@ -44,5 +43,12 @@ public class KeyManager : MonoBehaviour {
 				dailylog.t = 0;
 			}	
 		}
+        
+        if(Input.GetKeyDown(KeyCode.Escape) == true)
+        {
+            inventory.gameObject.SetActive(false);
+            dailylog.gameObject.SetActive(false);
+            dailylog.DailyDesc.SetActive(false);
+        }
 	}
 }
