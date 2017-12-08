@@ -26,7 +26,6 @@ public class EventManager : MonoBehaviour {
         if(EventFlow.isreadClock && EventFlow.isreadDeadMan && index == 0)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
-            Debug.Log("이동");
         }
         index++;
     }
