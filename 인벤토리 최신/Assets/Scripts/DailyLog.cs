@@ -6,11 +6,12 @@ public class DailyLog : MonoBehaviour
 {
 
     public List<GameObject> Slots2 = new List<GameObject>();
-    public List<Item> Items2 = new List<Item>();
+    public List<DailyItem> Items2 = new List<DailyItem>();
     public GameObject slots2;
-    public Inventory inventory;
+    public GameObject DailyDesc;
 
-    ItemDataBase database;
+
+    DailyDataBase database;
     int x = -62;
     int y = 310;
 
@@ -19,35 +20,38 @@ public class DailyLog : MonoBehaviour
     void Start()
     {
         int Slotamount = 0;
-        database = GameObject.FindGameObjectWithTag("ItemDataBase").GetComponent<ItemDataBase>();
-        inventory = GameObject.FindGameObjectWithTag("Inventory").GetComponent<Inventory>();
+        database = GameObject.FindGameObjectWithTag("DailyDataBase").GetComponent<DailyDataBase>();
         for (int i = 1; i < 7; i++)
         {
             for (int k = 1; k < 6; k++)
             {
                 GameObject slot1 = (GameObject)Instantiate(slots2);
-                slot1.GetComponent<SlotScript>().slotNumber = Slotamount;
+                slot1.GetComponent<DailySlot>().slotNumber2 = Slotamount;
                 Slots2.Add(slot1);
-                Items2.Add(new Item());
+                Items2.Add(new DailyItem());
                 slot1.transform.SetParent(this.gameObject.transform);
                 slot1.name = "Slot" + i + "." + k;
                 slot1.GetComponent<RectTransform>().localPosition = new Vector3(x, y, 0);
+                
                 x = x + 30;
                 if (k == 5)
                 {
                     x = -62;
                     y = y - 125;
                 }
+                slot1.transform.GetChild(2).gameObject.SetActive(true);
                 Slotamount++;
             }
         }
-        addItem(4);
+        addItem(0);
+        addItem(1);
 
     }
 
     // Update is called once per frame
     void Update()
     {
+        //z로 활성화
         if (Slots2[t].transform.GetChild(1).gameObject.activeInHierarchy == false)
         {
             if (Input.GetKeyDown(KeyCode.Z))
@@ -63,6 +67,7 @@ public class DailyLog : MonoBehaviour
                 t = 0;
             }
         }
+        //z상태시 방향키로 이동
         if (Input.GetKeyDown(KeyCode.RightArrow) == true)
         {
             Slots2[t + 1].transform.GetChild(1).gameObject.SetActive(true);
@@ -87,30 +92,43 @@ public class DailyLog : MonoBehaviour
             Slots2[t].transform.GetChild(1).gameObject.SetActive(false);
             t = t - 5;
         }
+        if(Slots2[t].transform.GetChild(1).gameObject.activeInHierarchy == true)
+        {
+            if(Input.GetKeyDown(KeyCode.Space) == true)
+            {
+                ShowDesc(DailyDesc.transform.localPosition);
+            }
+        }
+        
     }
-    void addItem(int id)
+    void addItem(int id2)
     {
 
-        for (int i = 0; i < database.items.Count; i++)
+        for (int i = 0; i < database.items2.Count; i++)
         {
 
-            if (database.items[i].itemID == id)
+            if (database.items2[i].itemID2 == id2)
             {
-                Item item = database.items[i];
-                addItemAtEmptySlot(item);
+                DailyItem DailyItem = database.items2[i];
+                addItemAtEmptySlot(DailyItem);
                 break;
             }
         }
     }
-    void addItemAtEmptySlot(Item item)
+    void addItemAtEmptySlot(DailyItem item)
     {
         for (int i = 0; i < Items2.Count; i++)
         {
-            if (Items2[i].itemName == null)
+            if (Items2[i].itemName2 == null)
             {
                 Items2[i] = item;
                 break;
             }
         }
+    }
+    void ShowDesc(Vector3 descPosition)
+    {
+        DailyDesc.SetActive(true);
+        DailyDesc.transform.GetComponent<RectTransform>().localPosition = new Vector3(descPosition.x - 200, descPosition.y + 100, descPosition.z);
     }
 }
