@@ -13,22 +13,16 @@ public class Inventory : MonoBehaviour {
 	int x = -62;
 	int y = 310;
 
-	public GameObject tooltip;
-	public GameObject draggedItemGameObject;
-	public bool draggingItem = false;
-	public Item draggedItem;
-	public int indexOfDraggedItem;
-
 	public int n = 0;
 
 
 	void Update()
 	{
 		
-		if (draggingItem) {
+		/*if (draggingItem) {
 			Vector3 posi = (Input.mousePosition - GameObject.FindGameObjectWithTag ("Canvas").GetComponent<RectTransform> ().localPosition);
 			draggedItemGameObject.GetComponent<RectTransform> ().localPosition = new Vector3 (posi.x + 15, posi.y - 15, posi.z);
-		}
+		}*/
 
 		if (Slots [n].transform.GetChild (1).gameObject.activeInHierarchy == false) 
 		{ 
@@ -61,7 +55,7 @@ public class Inventory : MonoBehaviour {
 		}
 
 
-	public void showTooltip(Vector3 toolPosition, Item item)
+	/*public void showTooltip(Vector3 toolPosition, Item item)
 	{
 		tooltip.SetActive (true);
 		tooltip.transform.GetComponent<RectTransform> ().localPosition = new Vector3 (toolPosition.x + 190, toolPosition.y - 195, toolPosition.z );
@@ -90,7 +84,7 @@ public class Inventory : MonoBehaviour {
 	public void closeTooltip()
 	{
 		tooltip.SetActive (false);
-	}
+	}*/
 
 	// Use this for initialization
 	void Start () {
@@ -114,9 +108,7 @@ public class Inventory : MonoBehaviour {
 				Slotamount++;
 			}
 		}
-        addItem(0);
-		
-		
+        addItem(4);
 	}
 
     void addItem(int id)

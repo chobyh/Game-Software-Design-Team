@@ -11,6 +11,7 @@ TagManager:
   - Item
   - Frame
   - DailyLog
+  - DailyDataBase
   layers:
   - Default
   - TransparentFX
