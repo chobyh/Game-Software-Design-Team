@@ -29,6 +29,7 @@ public class EventManager : MonoBehaviour {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             index++;
             Door1.GetComponent<Animator>().SetBool("isOpened", true);
+            Destroy(Door1.GetComponent<BoxCollider2D>()); 
         }
         
     }
