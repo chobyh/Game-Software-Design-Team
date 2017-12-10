@@ -9,6 +9,8 @@ public class CharactorController : MonoBehaviour {
     public AudioSource audio;
     public AudioClip walkSound;
 
+    public Transform hideTransform;
+    public Transform offHideTransform;
     public float speed;
 
 	public bool haveLanton = false;
@@ -37,7 +39,6 @@ public class CharactorController : MonoBehaviour {
     void Start () {
         animator = GetComponent<Animator>();
         audio = GetComponent<AudioSource>();
-        audio.clip = walkSound;
     }
 	
 	// Update is called once per frame
@@ -96,20 +97,24 @@ public class CharactorController : MonoBehaviour {
     
     void OnCollisionStay2D(Collision2D other)
     {
-		if (other.gameObject.tag.Equals ("Hide")) {
-			isHide = true;
-		}
-		else if (Input.GetButtonDown("Jump"))
+		if (Input.GetButtonDown("Jump"))
         {
             textboxmgr = other.gameObject.GetComponentInChildren<TextBoxMgr>();
-			if (textboxmgr == null)
-				return;
-            GameObject.Find("UI").transform.Find("Canvas").
-            transform.Find("TextBox").gameObject.SetActive(true);
-			textboxmgr.SetDialog ();
-            Time.timeScale = 0;
+            if (textboxmgr == null) { }
+            else
+            {
+                GameObject.Find("UI").transform.Find("Canvas").
+              transform.Find("TextBox").gameObject.SetActive(true);
+                textboxmgr.SetDialog();
+                Time.timeScale = 0;
+            }
+            
+            if (other.gameObject.GetComponent<DifferentSprite>() != null)
+            {
+                other.gameObject.GetComponent<DifferentSprite>().changeSprite();
+            }
 
-			if (other.transform.name.Equals ("Diary")) {
+            if (other.transform.name.Equals ("Diary")) {
 				haveDiary = true;
 			} else if (other.transform.name.Equals ("Remote")) {
 				haveRemote = true;
@@ -141,11 +146,16 @@ public class CharactorController : MonoBehaviour {
             {
                 isreadDeadMan = true;
             }
+            if(other.gameObject.tag.Equals("Hide") && isHide == false)
+            {
+                isHide = true;
+                this.gameObject.transform.position = hideTransform.transform.position;
+            } else if(isHide == true)
+            {
+                isHide = false;
+                this.gameObject.transform.position = offHideTransform.transform.position;
+            }
           }
 			
-	}
-	void OnCollisionOut2D (Collision2D other)
-	{
-		isHide = false;
 	}
 }

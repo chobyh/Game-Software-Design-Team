@@ -33,12 +33,10 @@ public class EventManager : MonoBehaviour {
             Destroy(Door1.GetComponent<BoxCollider2D>()); 
         }
 
-        if (EventFlow.haveRemote && EventFlow.haveBabyDoll && EventFlow.haveDoorKey && index == 2)
+        if (EventFlow.haveRemote && index == 1)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             index++;
-            Door2.GetComponent<Animator>().SetBool("isOpened", true);
-            Destroy(Door2.GetComponent<BoxCollider2D>());
         }
 
         if (EventFlow.haveRemote && EventFlow.haveBabyDoll && EventFlow.haveDoorKey && index == 2)

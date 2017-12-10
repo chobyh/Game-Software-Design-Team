@@ -80,6 +80,7 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\WangGeun\CharactorController.cs" />
     <Compile Include="Assets\Scripts\WangGeun\ChaseCharacter.cs" />
+    <Compile Include="Assets\Scripts\WangGeun\DifferentSprite.cs" />
     <Compile Include="Assets\Scripts\WangGeun\EventManager.cs" />
     <Compile Include="Assets\Scripts\WangGeun\GameOver.cs" />
     <Compile Include="Assets\Scripts\WangGeun\GameStart.cs" />

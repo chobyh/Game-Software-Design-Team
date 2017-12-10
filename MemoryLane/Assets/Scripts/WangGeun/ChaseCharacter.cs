@@ -13,7 +13,7 @@ public class ChaseCharacter : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Target = GameObject.FindGameObjectWithTag("Player");
-		oriPosition.transform.position = GameObject.FindGameObjectWithTag ("enemy").transform.position;
+		oriPosition = GameObject.FindGameObjectWithTag ("enemy");
 	}
 	
 	// Update is called once per frame
