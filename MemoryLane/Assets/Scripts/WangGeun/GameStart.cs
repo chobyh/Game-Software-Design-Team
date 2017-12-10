@@ -17,6 +17,6 @@ public class GameStart : MonoBehaviour {
 
     public void OnClickStart()
     {
-		SceneManager.LoadScene("1F");
+		SceneManager.LoadScene("Intro");
     }
 }

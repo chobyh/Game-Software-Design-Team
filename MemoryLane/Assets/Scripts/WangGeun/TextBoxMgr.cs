@@ -2,14 +2,12 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TextBoxMgr : MonoBehaviour
 {
-    //Made By 민들레미솔
-    //주의사항:마지막 줄은 공백으로
 
     //변수모음
-    #region Variable
     public GameObject textBox;//어떤 대화창인지
 
     public Text theName;//이름 Text 오브젝트
@@ -43,7 +41,6 @@ public class TextBoxMgr : MonoBehaviour
 
     UnityEngine.Events.UnityAction action;
 
-    #endregion
 
     //스크립트 활성화마다 실행함수
     public void SetDialog()
@@ -96,7 +93,6 @@ public class TextBoxMgr : MonoBehaviour
     }
 
     //다음대화 함수
-    #region NextTell
     void NextDialogue()//타이핑 쓰면
     {
         if (isTyping == false)
@@ -116,8 +112,11 @@ public class TextBoxMgr : MonoBehaviour
 					Destroy (thisGameObject);
 				} else if (this.gameObject.tag.Equals ("event")) {
 					Destroy (this.gameObject);
-				}
-				Debug.Log("오브젝트삭제");
+				} else if(this.gameObject.tag.Equals("intro"))
+                {
+                    Destroy(thisGameObject);
+                    SceneManager.LoadScene("1F");
+                }
             }
             else
             {
@@ -173,7 +172,6 @@ public class TextBoxMgr : MonoBehaviour
             ChoiceDialogue();
         }
     } 
-    #endregion
 
     //타자효과 함수
     private IEnumerator TextScroll(string lineOfText)
@@ -222,10 +220,8 @@ public class TextBoxMgr : MonoBehaviour
     }
 
     //활성화 비활성화 함수모음
-    #region ActiveDeactive
 
     //버튼
-    #region Button
     //버튼 ON함수
     void EnextButton()
     {
@@ -252,7 +248,6 @@ public class TextBoxMgr : MonoBehaviour
             nextbutton = false;
         }
     } 
-    #endregion
 
 
     //선택문
@@ -265,7 +260,6 @@ public class TextBoxMgr : MonoBehaviour
 
 
     //대화창
-    #region TextBox
     //대화창 활성화 함수
 
 
@@ -297,7 +291,5 @@ public class TextBoxMgr : MonoBehaviour
         StopCoroutine("TextScroll");//코루틴 종료
         textBox.SetActive(false);//대화창 비활성화
     }  
-    #endregion
 
-    #endregion
 }

@@ -19,9 +19,9 @@ public class ChaseCharacter : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 		if (!Target.gameObject.GetComponent<CharactorController> ().isHide) {
-			this.transform.position = Vector2.Lerp (this.transform.position, Target.transform.position, speed * Time.deltaTime);
+			this.transform.position = Vector2.MoveTowards (this.transform.position, Target.transform.position, speed * Time.deltaTime);
 		} else {
-			this.transform.position = Vector2.Lerp (this.transform.position, oriPosition.transform.position, speed * Time.deltaTime);
+			this.transform.position = Vector2.MoveTowards(this.transform.position, oriPosition.transform.position, speed * Time.deltaTime);
 		}
     }
 }

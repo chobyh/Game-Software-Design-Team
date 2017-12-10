@@ -12,7 +12,7 @@ public class CharactorController : MonoBehaviour {
     public float speed;
 
 	public bool haveLanton = false;
-    bool haveDiary = false;
+    public bool haveDiary = false;
     bool haveDoorKey = false;
     bool haveRemote = false;
     bool haveBabyDoll = false;
@@ -24,9 +24,9 @@ public class CharactorController : MonoBehaviour {
     bool haveSketchBook = false;
     bool havePicture = false;
 
-	bool isreadClock = false;
-	bool isreadDeadMan = false;
-	bool isread = false;
+    public bool isreadClock = false;
+    public bool isreadDeadMan = false;
+    public bool isread = false;
 
 	public bool isHide = false;
 
@@ -46,12 +46,25 @@ public class CharactorController : MonoBehaviour {
 
     void moveChar()
     {
+        Vector3 scale = transform.localScale;
         float xMove = Input.GetAxis("Horizontal") * speed * Time.deltaTime;
         float yMove = Input.GetAxis("Vertical") * speed * Time.deltaTime;
         this.transform.Translate(new Vector2(xMove, yMove));
         if (xMove != 0.0f || yMove != 0.0f)
         {
-            animator.SetBool("Move", true);
+            scale.z = 1;
+            if(xMove < 0)
+            {
+                scale.x = -Mathf.Abs(scale.x);
+                transform.localScale = scale;
+                animator.SetBool("Move", true);
+            }
+            else
+            {
+                scale.x = Mathf.Abs(scale.x);
+                transform.localScale = scale;
+                animator.SetBool("Move", true);
+            }
             if (!audio.isPlaying) { audio.Play(); }
         }
         else
@@ -118,6 +131,15 @@ public class CharactorController : MonoBehaviour {
 			} else if (other.transform.name.Equals ("Lanton")) {
 				haveLanton = true;
 			}
+
+            if(other.transform.name.Equals("Clock"))
+            {
+                isreadClock = true;
+            }
+            else if(other.transform.name.Equals("DeadMan"))
+            {
+                isreadDeadMan = true;
+            }
           }
 			
 	}
