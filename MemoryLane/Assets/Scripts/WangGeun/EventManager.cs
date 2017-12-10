@@ -24,13 +24,21 @@ public class EventManager : MonoBehaviour {
 
     void CheckEvent()
     {
-        if(EventFlow.isreadClock && EventFlow.isreadDeadMan && index == 0)
+        if(EventFlow.isreadClock && EventFlow.isreadDeadMan && index == 0 && EventFlow.haveDiary)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             index++;
             Door1.GetComponent<Animator>().SetBool("isOpened", true);
             Destroy(Door1.GetComponent<BoxCollider2D>()); 
         }
-        
+
+        if (EventFlow.isreadClock && EventFlow.isreadDeadMan && index == 0 && EventFlow.haveDiary)
+        {
+            DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
+            index++;
+            Door1.GetComponent<Animator>().SetBool("isOpened", true);
+            Destroy(Door1.GetComponent<BoxCollider2D>());
+        }
+
     }
 }

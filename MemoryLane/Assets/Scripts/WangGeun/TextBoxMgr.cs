@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class TextBoxMgr : MonoBehaviour
 {
@@ -111,7 +112,11 @@ public class TextBoxMgr : MonoBehaviour
 					Destroy (thisGameObject);
 				} else if (this.gameObject.tag.Equals ("event")) {
 					Destroy (this.gameObject);
-				}
+				} else if(this.gameObject.tag.Equals("intro"))
+                {
+                    Destroy(thisGameObject);
+                    SceneManager.LoadScene("1F");
+                }
             }
             else
             {

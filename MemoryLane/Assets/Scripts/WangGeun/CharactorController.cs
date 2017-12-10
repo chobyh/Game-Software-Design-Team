@@ -12,7 +12,7 @@ public class CharactorController : MonoBehaviour {
     public float speed;
 
 	public bool haveLanton = false;
-    bool haveDiary = false;
+    public bool haveDiary = false;
     bool haveDoorKey = false;
     bool haveRemote = false;
     bool haveBabyDoll = false;

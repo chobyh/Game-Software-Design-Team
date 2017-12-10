@@ -83,6 +83,7 @@
     <Compile Include="Assets\Scripts\WangGeun\EventManager.cs" />
     <Compile Include="Assets\Scripts\WangGeun\GameOver.cs" />
     <Compile Include="Assets\Scripts\WangGeun\GameStart.cs" />
+    <Compile Include="Assets\Scripts\WangGeun\IntroManager.cs" />
     <Compile Include="Assets\Scripts\WangGeun\LantonController.cs" />
     <Compile Include="Assets\Scripts\WangGeun\TextBoxMgr.cs" />
   </ItemGroup>
