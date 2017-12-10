@@ -7,6 +7,7 @@ public class EventManager : MonoBehaviour {
     GameObject PlayerObject;
     CharactorController EventFlow;
     public GameObject Door1;
+    public GameObject Door2;
     int index = 0;
 
     public GameObject[] DynamicTextEvent;
@@ -32,12 +33,20 @@ public class EventManager : MonoBehaviour {
             Destroy(Door1.GetComponent<BoxCollider2D>()); 
         }
 
-        if (EventFlow.isreadClock && EventFlow.isreadDeadMan && index == 0 && EventFlow.haveDiary)
+        if (EventFlow.haveRemote && EventFlow.haveBabyDoll && EventFlow.haveDoorKey && index == 2)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             index++;
-            Door1.GetComponent<Animator>().SetBool("isOpened", true);
-            Destroy(Door1.GetComponent<BoxCollider2D>());
+            Door2.GetComponent<Animator>().SetBool("isOpened", true);
+            Destroy(Door2.GetComponent<BoxCollider2D>());
+        }
+
+        if (EventFlow.haveRemote && EventFlow.haveBabyDoll && EventFlow.haveDoorKey && index == 2)
+        {
+            DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
+            index++;
+            Door2.GetComponent<Animator>().SetBool("isOpened", true);
+            Destroy(Door2.GetComponent<BoxCollider2D>());
         }
 
     }

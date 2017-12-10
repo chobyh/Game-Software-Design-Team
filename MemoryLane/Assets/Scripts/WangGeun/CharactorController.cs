@@ -13,10 +13,11 @@ public class CharactorController : MonoBehaviour {
 
 	public bool haveLanton = false;
     public bool haveDiary = false;
-    bool haveDoorKey = false;
-    bool haveRemote = false;
-    bool haveBabyDoll = false;
-    bool haveShovel = false;
+    public bool haveDoorKey = false;
+    public bool haveRemote = false;
+    public bool haveBabyDoll = false;
+    public bool haveShovel = false;
+
     bool haveFathersLetter = false;
     bool haveDaughtersLetter = false;
     bool havePolice = false;
