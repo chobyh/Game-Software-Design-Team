@@ -11,6 +11,7 @@ public class CharactorController : MonoBehaviour {
 
     public Transform hideTransform;
     public Transform offHideTransform;
+    public Transform ghostSeeTransform;
     public float speed;
 
 	public bool haveLanton = false;
@@ -29,8 +30,9 @@ public class CharactorController : MonoBehaviour {
 
     public bool isreadClock = false;
     public bool isreadDeadMan = false;
-    public bool isread = false;
+    public bool isreadTV = false;
 
+    public bool haveHide = false;
 	public bool isHide = false;
 
 
@@ -101,6 +103,8 @@ public class CharactorController : MonoBehaviour {
         {
             textboxmgr = other.gameObject.GetComponentInChildren<TextBoxMgr>();
             if (textboxmgr == null) { }
+            else if(other.gameObject.transform.name.Equals("TV") && haveRemote == false)
+            { }
             else
             {
                 GameObject.Find("UI").transform.Find("Canvas").
@@ -108,9 +112,10 @@ public class CharactorController : MonoBehaviour {
                 textboxmgr.SetDialog();
                 Time.timeScale = 0;
             }
-            
-            if (other.gameObject.GetComponent<DifferentSprite>() != null)
+
+            if (other.gameObject.transform.name.Equals("TV") && haveRemote == true)
             {
+                isreadTV = true;
                 other.gameObject.GetComponent<DifferentSprite>().changeSprite();
             }
 
@@ -120,7 +125,12 @@ public class CharactorController : MonoBehaviour {
 				haveRemote = true;
 			} else if (other.transform.name.Equals ("BabyDoll")) {
 				haveBabyDoll = true;
-			} else if (other.transform.name.Equals ("Shovel")) {
+			} else if (other.transform.name.Equals("DoorKey"))
+            {
+                haveDoorKey = true;
+                GameObject.Find("Player").transform.Find("Character").transform.Find("Main Camera").gameObject.GetComponent<Camera>().transform.position = ghostSeeTransform.transform.position;
+            }
+            else if (other.transform.name.Equals ("Shovel")) {
 				haveShovel = true;
 			} else if (other.transform.name.Equals ("Father'sLetter")) {
 				haveFathersLetter = true;
@@ -148,6 +158,7 @@ public class CharactorController : MonoBehaviour {
             }
             if(other.gameObject.tag.Equals("Hide") && isHide == false)
             {
+                haveHide = true;
                 isHide = true;
                 this.gameObject.transform.position = hideTransform.transform.position;
             } else if(isHide == true)
