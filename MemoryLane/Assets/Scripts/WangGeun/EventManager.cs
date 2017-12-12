@@ -66,5 +66,17 @@ public class EventManager : MonoBehaviour {
             index++;
         }
 
+        else if (EventFlow.isreadHole && index == 6)
+        {
+            DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
+            index++;
+        }
+
+        else if (GameObject.FindGameObjectsWithTag("item") == null && index == 7)
+        {
+            DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
+            index++;
+        }
+
     }
 }

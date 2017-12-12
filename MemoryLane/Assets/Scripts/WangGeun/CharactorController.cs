@@ -14,7 +14,10 @@ public class CharactorController : MonoBehaviour {
     public Transform ghostSeeTransform;
     public float speed;
 
-	public bool haveLanton = false;
+    public GameObject lockDoor;
+    public TextBoxMgr openDoorText;
+
+    public bool haveLanton = false;
     public bool haveDiary = false;
     public bool haveDoorKey = false;
     public bool haveRemote = false;
@@ -31,6 +34,7 @@ public class CharactorController : MonoBehaviour {
     public bool isreadClock = false;
     public bool isreadDeadMan = false;
     public bool isreadTV = false;
+    public bool isreadHole = false;
 
     public bool haveHide = false;
 	public bool isHide = false;
@@ -102,8 +106,16 @@ public class CharactorController : MonoBehaviour {
 		if (Input.GetButtonDown("Jump"))
         {
             textboxmgr = other.gameObject.GetComponentInChildren<TextBoxMgr>();
+
+            if (haveDoorKey && other.gameObject == lockDoor.gameObject)
+            {
+                textboxmgr = openDoorText;
+                other.gameObject.GetComponent<Animator>().SetBool("isOpened", true);
+                Destroy(other.gameObject.GetComponent<BoxCollider2D>());
+            }
+
             if (textboxmgr == null) { }
-            else if(other.gameObject.transform.name.Equals("TV") && haveRemote == false)
+            else if((other.gameObject.transform.name.Equals("TV") && haveRemote == false )||((other.gameObject.transform.name.Equals("Hole")) && haveShovel == false) )
             { }
             else
             {
@@ -119,6 +131,16 @@ public class CharactorController : MonoBehaviour {
                 other.gameObject.GetComponent<DifferentSprite>().changeSprite();
             }
 
+            if((other.gameObject.transform.name.Equals("Hole")) && haveShovel == true)
+            {
+                isreadHole = true;
+                GameObject[] last = GameObject.FindGameObjectsWithTag("item");
+                for(int a = 0; a < last.Length; a++)
+                {
+                    last[a].SetActive(true);
+                }
+            }
+
             if (other.transform.name.Equals ("Diary")) {
 				haveDiary = true;
 			} else if (other.transform.name.Equals ("Remote")) {
@@ -128,7 +150,7 @@ public class CharactorController : MonoBehaviour {
 			} else if (other.transform.name.Equals("DoorKey"))
             {
                 haveDoorKey = true;
-                GameObject.Find("Player").transform.Find("Character").transform.Find("Main Camera").gameObject.GetComponent<Camera>().transform.position = ghostSeeTransform.transform.position;
+                Debug.Log("카메라전환");
             }
             else if (other.transform.name.Equals ("Shovel")) {
 				haveShovel = true;
