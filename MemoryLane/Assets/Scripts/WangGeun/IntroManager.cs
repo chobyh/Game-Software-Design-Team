@@ -20,6 +20,7 @@ public class IntroManager : MonoBehaviour {
     void Update () {
         if(isrleft)
         {
+            transform.Translate(new Vector3(0.005f, 0, 0));
             transform.Rotate(new Vector3(0, 0, 1) * 0.05f);
             if(this.gameObject.transform.rotation.z > 0.03f)
             {
@@ -28,6 +29,7 @@ public class IntroManager : MonoBehaviour {
         }
         else
         {
+            transform.Translate(new Vector3(-0.005f, 0, 0));
             transform.Rotate(new Vector3(0, 0, -1) * 0.05f);
             if (this.gameObject.transform.rotation.z < -0.03f)
             {

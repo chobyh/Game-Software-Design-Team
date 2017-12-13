@@ -6,10 +6,11 @@ public class EventManager : MonoBehaviour {
 
     GameObject PlayerObject;
     CharactorController EventFlow;
-    public GameObject Door1;
-    public GameObject Door2;
+    public GameObject Door;
+    public GameObject Ghost;
     int index = 0;
 
+	public GameObject[] HideObjects;
     public GameObject[] DynamicTextEvent;
 
     // Use this for initialization
@@ -29,22 +30,56 @@ public class EventManager : MonoBehaviour {
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             index++;
-            Door1.GetComponent<Animator>().SetBool("isOpened", true);
-            Destroy(Door1.GetComponent<BoxCollider2D>()); 
+            Door.GetComponent<Animator>().SetBool("isOpened", true);
+            Destroy(Door.GetComponent<BoxCollider2D>()); 
         }
 
-        if (EventFlow.haveRemote && index == 1)
+        else if (EventFlow.haveBabyDoll && index == 1)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             index++;
         }
 
-        if (EventFlow.haveRemote && EventFlow.haveBabyDoll && EventFlow.haveDoorKey && index == 2)
+        else if (EventFlow.isreadTV && index == 2)
+        {
+            DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
+            Ghost.SetActive(true);
+            index++;
+        }
+
+        else if (EventFlow.haveHide && index == 3)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             index++;
-            Door2.GetComponent<Animator>().SetBool("isOpened", true);
-            Destroy(Door2.GetComponent<BoxCollider2D>());
+        }
+
+        else if (EventFlow.haveHide && index == 4 && !EventFlow.isHide)
+        {
+            DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
+			Ghost.SetActive(false);
+            GameObject.Find("Items").transform.Find("DoorKey").gameObject.SetActive(true);
+            index++;
+        }
+
+        else if(EventFlow.haveDoorKey && EventFlow.haveBabyDoll && index == 5)
+        {
+            DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
+            index++;
+        }
+
+        else if (EventFlow.isreadHole && index == 6)
+        {
+            DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
+			for (int a = 0; a < HideObjects.Length; a++) {
+				HideObjects [a].SetActive (true);
+			}
+            index++;
+        }
+
+		else if (EventFlow.haveAllitem && index == 7)
+        {
+            DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
+            index++;
         }
 
     }

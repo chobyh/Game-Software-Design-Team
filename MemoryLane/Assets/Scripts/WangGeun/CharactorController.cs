@@ -8,12 +8,18 @@ public class CharactorController : MonoBehaviour {
 
     public AudioSource audio;
     public AudioClip walkSound;
+	public AudioClip openSound;
+	public AudioClip closeSound;
 
     public Transform hideTransform;
     public Transform offHideTransform;
+    public Transform ghostSeeTransform;
     public float speed;
 
-	public bool haveLanton = false;
+    public GameObject lockDoor;
+    public TextBoxMgr openDoorText;
+
+    public bool haveLanton = false;
     public bool haveDiary = false;
     public bool haveDoorKey = false;
     public bool haveRemote = false;
@@ -26,11 +32,14 @@ public class CharactorController : MonoBehaviour {
     bool haveAward = false;
     bool haveSketchBook = false;
     bool havePicture = false;
+	public bool haveAllitem = false;
 
     public bool isreadClock = false;
     public bool isreadDeadMan = false;
-    public bool isread = false;
+    public bool isreadTV = false;
+    public bool isreadHole = false;
 
+    public bool haveHide = false;
 	public bool isHide = false;
 
 
@@ -86,6 +95,9 @@ public class CharactorController : MonoBehaviour {
                 return;
             GameObject.Find("UI").transform.Find("Canvas").
             transform.Find("TextBox").gameObject.SetActive(true);
+			if (this.gameObject.GetComponent<AudioSource> () != null) {
+				this.gameObject.GetComponent<AudioSource> ().Play();
+			}
             textboxmgr.SetDialog();
             Time.timeScale = 0;
         }
@@ -100,7 +112,17 @@ public class CharactorController : MonoBehaviour {
 		if (Input.GetButtonDown("Jump"))
         {
             textboxmgr = other.gameObject.GetComponentInChildren<TextBoxMgr>();
+
+            if (haveDoorKey && other.gameObject == lockDoor.gameObject)
+            {
+                textboxmgr = openDoorText;
+                other.gameObject.GetComponent<Animator>().SetBool("isOpened", true);
+                Destroy(other.gameObject.GetComponent<BoxCollider2D>());
+            }
+
             if (textboxmgr == null) { }
+            else if((other.gameObject.transform.name.Equals("TV") && haveRemote == false )||((other.gameObject.transform.name.Equals("Hole")) && haveShovel == false) )
+            { }
             else
             {
                 GameObject.Find("UI").transform.Find("Canvas").
@@ -108,18 +130,32 @@ public class CharactorController : MonoBehaviour {
                 textboxmgr.SetDialog();
                 Time.timeScale = 0;
             }
-            
-            if (other.gameObject.GetComponent<DifferentSprite>() != null)
+
+            if (other.gameObject.transform.name.Equals("TV") && haveRemote == true)
             {
+                isreadTV = true;
                 other.gameObject.GetComponent<DifferentSprite>().changeSprite();
             }
 
-            if (other.transform.name.Equals ("Diary")) {
+            if((other.gameObject.transform.name.Equals("Hole")) && haveShovel == true)
+            {
+                isreadHole = true;
+                GameObject[] last = GameObject.FindGameObjectsWithTag("item");
+                for(int a = 0; a < last.Length; a++)
+                {
+                    last[a].SetActive(true);
+                }
+            }
+
+			if (other.transform.name.Equals ("Diary")) {
 				haveDiary = true;
 			} else if (other.transform.name.Equals ("Remote")) {
 				haveRemote = true;
 			} else if (other.transform.name.Equals ("BabyDoll")) {
 				haveBabyDoll = true;
+			} else if (other.transform.name.Equals ("DoorKey")) {
+				haveDoorKey = true;
+				this.gameObject.GetComponentInChildren<Camera> ().transform.Translate (0, 3, 0);
 			} else if (other.transform.name.Equals ("Shovel")) {
 				haveShovel = true;
 			} else if (other.transform.name.Equals ("Father'sLetter")) {
@@ -136,6 +172,8 @@ public class CharactorController : MonoBehaviour {
 				havePicture = true;
 			} else if (other.transform.name.Equals ("Lanton")) {
 				haveLanton = true;
+			} else if (haveFathersLetter && haveDaughtersLetter && havePolice && haveAward && haveSketchBook && havePicture) {
+				haveAllitem = true;
 			}
 
             if(other.transform.name.Equals("Clock"))
@@ -148,12 +186,17 @@ public class CharactorController : MonoBehaviour {
             }
             if(other.gameObject.tag.Equals("Hide") && isHide == false)
             {
+                haveHide = true;
                 isHide = true;
                 this.gameObject.transform.position = hideTransform.transform.position;
+				other.gameObject.GetComponent<AudioSource> ().clip = openSound;
+				other.gameObject.GetComponent<AudioSource> ().Play ();
             } else if(isHide == true)
             {
                 isHide = false;
                 this.gameObject.transform.position = offHideTransform.transform.position;
+				//other.gameObject.GetComponent<AudioSource> ().clip = closeSound;
+				//other.gameObject.GetComponent<AudioSource> ().Play ();
             }
           }
 			
