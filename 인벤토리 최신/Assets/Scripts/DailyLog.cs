@@ -92,14 +92,25 @@ public class DailyLog : MonoBehaviour
             Slots2[t].transform.GetChild(1).gameObject.SetActive(false);
             t = t - 5;
         }
+        //일지 사용
         if(Slots2[t].transform.GetChild(1).gameObject.activeInHierarchy == true)
         {
-            if(Input.GetKeyDown(KeyCode.Space) == true)
+            if(DailyDesc.transform.gameObject.activeInHierarchy == false)
             {
-                ShowDesc(DailyDesc.transform.localPosition);
+                if (Input.GetKeyDown(KeyCode.Space) == true)
+                {
+                    showDesc(DailyDesc.transform.localPosition);
+                }
+            }
+            else
+            {
+                if (Input.GetKeyDown(KeyCode.Space) == true)
+                {
+                    closeDesc();
+                }
             }
         }
-        
+  
     }
     void addItem(int id2)
     {
@@ -126,9 +137,13 @@ public class DailyLog : MonoBehaviour
             }
         }
     }
-    void ShowDesc(Vector3 descPosition)
+    void showDesc(Vector3 descPosition)
     {
         DailyDesc.SetActive(true);
-        DailyDesc.transform.GetComponent<RectTransform>().localPosition = new Vector3(descPosition.x - 200, descPosition.y + 100, descPosition.z);
+        DailyDesc.transform.GetComponent<RectTransform>().localPosition = new Vector3(descPosition.x, descPosition.y, descPosition.z);
+    }
+    void closeDesc()
+    {
+        DailyDesc.SetActive(false);
     }
 }
