@@ -6,11 +6,16 @@ public class EventManager : MonoBehaviour {
 
     GameObject PlayerObject;
     CharactorController EventFlow;
-    public GameObject Door;
+    public GameObject StartDoor;
+    public GameObject NextDoor;
     public GameObject Ghost;
     int index = 0;
 
-	public GameObject[] HideObjects;
+    public AudioSource FlowAudio;
+    public AudioClip GhostSound;
+    public AudioClip DoorOpen;
+
+    public GameObject[] HideObjects;
     public GameObject[] DynamicTextEvent;
 
     // Use this for initialization
@@ -30,20 +35,28 @@ public class EventManager : MonoBehaviour {
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             index++;
-            Door.GetComponent<Animator>().SetBool("isOpened", true);
-            Destroy(Door.GetComponent<BoxCollider2D>()); 
+            StartDoor.GetComponent<Animator>().SetBool("isOpened", true);
+            //StartDoor.GetComponent<AudioSource>().Play();
+            Destroy(StartDoor.GetComponent<BoxCollider2D>()); 
         }
 
         else if (EventFlow.haveBabyDoll && index == 1)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             index++;
+            NextDoor.GetComponent<Animator>().SetBool("isOpened", true);
+            FlowAudio.clip = DoorOpen;
+            FlowAudio.Play();
+            //NextDoor.GetComponent<AudioSource>().Play();
+            Destroy(NextDoor.GetComponent<BoxCollider2D>());
         }
 
         else if (EventFlow.isreadTV && index == 2)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             Ghost.SetActive(true);
+            FlowAudio.clip = GhostSound;
+            FlowAudio.Play();
             index++;
         }
 
@@ -51,10 +64,12 @@ public class EventManager : MonoBehaviour {
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             index++;
+            FlowAudio.PlayDelayed(3.0f);
         }
 
         else if (EventFlow.haveHide && index == 4 && !EventFlow.isHide)
         {
+            FlowAudio.clip = null;
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
 			Ghost.SetActive(false);
             GameObject.Find("Items").transform.Find("DoorKey").gameObject.SetActive(true);

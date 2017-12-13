@@ -11,6 +11,10 @@ public class CharactorController : MonoBehaviour {
 	public AudioClip openSound;
 	public AudioClip closeSound;
 
+    public AudioSource FlowAudio;
+    public AudioClip peopleSound;
+    public AudioClip shoutGirl;
+
     public Transform hideTransform;
     public Transform offHideTransform;
     public Transform ghostSeeTransform;
@@ -95,8 +99,14 @@ public class CharactorController : MonoBehaviour {
                 return;
             GameObject.Find("UI").transform.Find("Canvas").
             transform.Find("TextBox").gameObject.SetActive(true);
-			if (this.gameObject.GetComponent<AudioSource> () != null) {
-				this.gameObject.GetComponent<AudioSource> ().Play();
+            if (other.gameObject.name.Equals("TextEvent (2)"))
+            {
+                FlowAudio.clip = peopleSound;
+                FlowAudio.Play();
+            }
+            else if (other.gameObject.name.Equals("TextEvent (4)")) {
+                FlowAudio.clip = shoutGirl;
+                FlowAudio.Play();
 			}
             textboxmgr.SetDialog();
             Time.timeScale = 0;
@@ -118,6 +128,7 @@ public class CharactorController : MonoBehaviour {
                 textboxmgr = openDoorText;
                 other.gameObject.GetComponent<Animator>().SetBool("isOpened", true);
                 Destroy(other.gameObject.GetComponent<BoxCollider2D>());
+                //other.gameObject.GetComponent<AudioSource>().Play();
             }
 
             if (textboxmgr == null) { }
@@ -172,7 +183,9 @@ public class CharactorController : MonoBehaviour {
 				havePicture = true;
 			} else if (other.transform.name.Equals ("Lanton")) {
 				haveLanton = true;
-			} else if (haveFathersLetter && haveDaughtersLetter && havePolice && haveAward && haveSketchBook && havePicture) {
+			}
+
+            if (haveFathersLetter && haveDaughtersLetter && havePolice && haveAward && haveSketchBook && havePicture) {
 				haveAllitem = true;
 			}
 
