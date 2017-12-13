@@ -51,13 +51,13 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\Angie Sprite\EditorScripts\OpenMoreGames.cs" />
-     <Compile Include="Assets\Angie Sprite\Scripts\ButtonNextAnim.cs" />
-     <Compile Include="Assets\Angie Sprite\Scripts\Enums.cs" />
      <Compile Include="Assets\Scripts\WangGeun\CharactorController.cs" />
      <Compile Include="Assets\Scripts\WangGeun\ChaseCharacter.cs" />
+     <Compile Include="Assets\Scripts\WangGeun\DifferentSprite.cs" />
+     <Compile Include="Assets\Scripts\WangGeun\EventManager.cs" />
      <Compile Include="Assets\Scripts\WangGeun\GameOver.cs" />
      <Compile Include="Assets\Scripts\WangGeun\GameStart.cs" />
+     <Compile Include="Assets\Scripts\WangGeun\IntroManager.cs" />
      <Compile Include="Assets\Scripts\WangGeun\LantonController.cs" />
      <Compile Include="Assets\Scripts\WangGeun\TextBoxMgr.cs" />
  <Reference Include="UnityEngine.UI">

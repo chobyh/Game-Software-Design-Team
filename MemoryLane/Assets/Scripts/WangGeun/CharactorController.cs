@@ -8,6 +8,8 @@ public class CharactorController : MonoBehaviour {
 
     public AudioSource audio;
     public AudioClip walkSound;
+	public AudioClip openSound;
+	public AudioClip closeSound;
 
     public Transform hideTransform;
     public Transform offHideTransform;
@@ -30,6 +32,7 @@ public class CharactorController : MonoBehaviour {
     bool haveAward = false;
     bool haveSketchBook = false;
     bool havePicture = false;
+	public bool haveAllitem = false;
 
     public bool isreadClock = false;
     public bool isreadDeadMan = false;
@@ -92,6 +95,9 @@ public class CharactorController : MonoBehaviour {
                 return;
             GameObject.Find("UI").transform.Find("Canvas").
             transform.Find("TextBox").gameObject.SetActive(true);
+			if (this.gameObject.GetComponent<AudioSource> () != null) {
+				this.gameObject.GetComponent<AudioSource> ().Play();
+			}
             textboxmgr.SetDialog();
             Time.timeScale = 0;
         }
@@ -141,18 +147,16 @@ public class CharactorController : MonoBehaviour {
                 }
             }
 
-            if (other.transform.name.Equals ("Diary")) {
+			if (other.transform.name.Equals ("Diary")) {
 				haveDiary = true;
 			} else if (other.transform.name.Equals ("Remote")) {
 				haveRemote = true;
 			} else if (other.transform.name.Equals ("BabyDoll")) {
 				haveBabyDoll = true;
-			} else if (other.transform.name.Equals("DoorKey"))
-            {
-                haveDoorKey = true;
-                Debug.Log("카메라전환");
-            }
-            else if (other.transform.name.Equals ("Shovel")) {
+			} else if (other.transform.name.Equals ("DoorKey")) {
+				haveDoorKey = true;
+				this.gameObject.GetComponentInChildren<Camera> ().transform.Translate (0, 3, 0);
+			} else if (other.transform.name.Equals ("Shovel")) {
 				haveShovel = true;
 			} else if (other.transform.name.Equals ("Father'sLetter")) {
 				haveFathersLetter = true;
@@ -168,6 +172,8 @@ public class CharactorController : MonoBehaviour {
 				havePicture = true;
 			} else if (other.transform.name.Equals ("Lanton")) {
 				haveLanton = true;
+			} else if (haveFathersLetter && haveDaughtersLetter && havePolice && haveAward && haveSketchBook && havePicture) {
+				haveAllitem = true;
 			}
 
             if(other.transform.name.Equals("Clock"))
@@ -183,10 +189,14 @@ public class CharactorController : MonoBehaviour {
                 haveHide = true;
                 isHide = true;
                 this.gameObject.transform.position = hideTransform.transform.position;
+				other.gameObject.GetComponent<AudioSource> ().clip = openSound;
+				other.gameObject.GetComponent<AudioSource> ().Play ();
             } else if(isHide == true)
             {
                 isHide = false;
                 this.gameObject.transform.position = offHideTransform.transform.position;
+				//other.gameObject.GetComponent<AudioSource> ().clip = closeSound;
+				//other.gameObject.GetComponent<AudioSource> ().Play ();
             }
           }
 			

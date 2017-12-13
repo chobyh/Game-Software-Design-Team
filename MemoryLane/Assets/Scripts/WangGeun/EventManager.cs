@@ -10,6 +10,7 @@ public class EventManager : MonoBehaviour {
     public GameObject Ghost;
     int index = 0;
 
+	public GameObject[] HideObjects;
     public GameObject[] DynamicTextEvent;
 
     // Use this for initialization
@@ -55,7 +56,7 @@ public class EventManager : MonoBehaviour {
         else if (EventFlow.haveHide && index == 4 && !EventFlow.isHide)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
-            GameObject.Find("Ghost").transform.gameObject.SetActive(false);
+			Ghost.SetActive(false);
             GameObject.Find("Items").transform.Find("DoorKey").gameObject.SetActive(true);
             index++;
         }
@@ -69,10 +70,13 @@ public class EventManager : MonoBehaviour {
         else if (EventFlow.isreadHole && index == 6)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
+			for (int a = 0; a < HideObjects.Length; a++) {
+				HideObjects [a].SetActive (true);
+			}
             index++;
         }
 
-        else if (GameObject.FindGameObjectsWithTag("item") == null && index == 7)
+		else if (EventFlow.haveAllitem && index == 7)
         {
             DynamicTextEvent[index].transform.position = PlayerObject.transform.position;
             index++;

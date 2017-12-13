@@ -1,10 +1,11 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WangGeun\ChaseCharacter.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\WangGeun\TextBoxMgr.cs">
     <Files>
-      <File FileName="Assets\Scripts\WangGeun\CharactorController.cs" Line="85" Column="38" />
-      <File FileName="Assets\Scripts\WangGeun\TextBoxMgr.cs" Line="110" Column="13" />
-      <File FileName="Assets\Scripts\WangGeun\ChaseCharacter.cs" Line="16" Column="98" />
+      <File FileName="Assets\Scripts\WangGeun\CharactorController.cs" Line="158" Column="43" />
+      <File FileName="Assets\Scripts\WangGeun\TextBoxMgr.cs" Line="114" Column="94" />
+      <File FileName="Assets\Scripts\WangGeun\ChaseCharacter.cs" Line="16" Column="61" />
+      <File FileName="Assets\Scripts\WangGeun\EventManager.cs" Line="46" Column="35" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

@@ -110,6 +110,8 @@ public class TextBoxMgr : MonoBehaviour
                 DisableTextBox();//비활성화 함수
 				if (thisGameObject.tag.Equals ("item")) {
 					Destroy (thisGameObject);
+					if(thisGameObject.name.Equals("DoorKey"))
+					{GameObject.Find("Player").transform.Find("Character").gameObject.GetComponentInChildren<Camera> ().transform.Translate (0, -3, 0);}
 				} else if (this.gameObject.tag.Equals ("event")) {
 					Destroy (this.gameObject);
 				} else if(this.gameObject.tag.Equals("intro"))
