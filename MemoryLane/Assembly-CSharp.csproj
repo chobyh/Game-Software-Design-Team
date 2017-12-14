@@ -61,6 +61,7 @@
      <Compile Include="Assets\Scripts\ByeongHee\SlotScript.cs" />
      <Compile Include="Assets\Scripts\WangGeun\CharactorController.cs" />
      <Compile Include="Assets\Scripts\WangGeun\ChaseCharacter.cs" />
+     <Compile Include="Assets\Scripts\WangGeun\DiaryManager.cs" />
      <Compile Include="Assets\Scripts\WangGeun\DifferentSprite.cs" />
      <Compile Include="Assets\Scripts\WangGeun\EventManager.cs" />
      <Compile Include="Assets\Scripts\WangGeun\GameOver.cs" />

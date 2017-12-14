@@ -23,6 +23,8 @@ public class CharactorController : MonoBehaviour {
     public GameObject lockDoor;
     public TextBoxMgr openDoorText;
 
+    public bool isShout = false;
+
     public bool haveLanton = false;
     public bool haveDiary = false;
     public bool haveDoorKey = false;
@@ -41,6 +43,12 @@ public class CharactorController : MonoBehaviour {
     public bool isreadClock = false;
     public bool isreadDeadMan = false;
     public bool isreadTV = false;
+    public bool isreadNewspaper = false;
+    public bool isreadFamilyPhoto = false;
+    public bool isreadGuiltybook = false;
+    public bool isreadCalender = false;
+    
+
     public bool isreadHole = false;
 
     public bool haveHide = false;
@@ -105,6 +113,7 @@ public class CharactorController : MonoBehaviour {
                 FlowAudio.Play();
             }
             else if (other.gameObject.name.Equals("TextEvent (4)")) {
+                isShout = true;
                 FlowAudio.clip = shoutGirl;
                 FlowAudio.Play();
 			}
@@ -197,7 +206,24 @@ public class CharactorController : MonoBehaviour {
             {
                 isreadDeadMan = true;
             }
-            if(other.gameObject.tag.Equals("Hide") && isHide == false)
+            else if (other.transform.name.Equals("FamilyPhoto"))
+            {
+                isreadFamilyPhoto = true;
+            }
+            else if (other.transform.name.Equals("Newspaper"))
+            {
+                isreadNewspaper = true;
+            }
+            else if (other.transform.name.Equals("Guilty_book"))
+            {
+                isreadGuiltybook = true;
+            }
+            else if (other.transform.name.Equals("Calender"))
+            {
+                isreadCalender = true;
+            }
+
+            if (other.gameObject.tag.Equals("Hide") && isHide == false)
             {
                 haveHide = true;
                 isHide = true;
