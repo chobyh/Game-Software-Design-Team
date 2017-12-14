@@ -78,8 +78,17 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Scripts\ByeongHee\DailyDataBase.cs" />
+    <Compile Include="Assets\Scripts\ByeongHee\DailyLog.cs" />
+    <Compile Include="Assets\Scripts\ByeongHee\DailySlot.cs" />
+    <Compile Include="Assets\Scripts\ByeongHee\Inventory.cs" />
+    <Compile Include="Assets\Scripts\ByeongHee\Item.cs" />
+    <Compile Include="Assets\Scripts\ByeongHee\ItemDataBase.cs" />
+    <Compile Include="Assets\Scripts\ByeongHee\KeyManager.cs" />
+    <Compile Include="Assets\Scripts\ByeongHee\SlotScript.cs" />
     <Compile Include="Assets\Scripts\WangGeun\CharactorController.cs" />
     <Compile Include="Assets\Scripts\WangGeun\ChaseCharacter.cs" />
+    <Compile Include="Assets\Scripts\WangGeun\DiaryManager.cs" />
     <Compile Include="Assets\Scripts\WangGeun\DifferentSprite.cs" />
     <Compile Include="Assets\Scripts\WangGeun\EventManager.cs" />
     <Compile Include="Assets\Scripts\WangGeun\GameOver.cs" />
