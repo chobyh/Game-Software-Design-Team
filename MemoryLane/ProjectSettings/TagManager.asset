@@ -11,6 +11,10 @@ TagManager:
   - Object
   - Hide
   - intro
+  - Inventory
+  - DailyLog
+  - ItemDataBase
+  - DailyDataBase
   layers:
   - Default
   - TransparentFX
