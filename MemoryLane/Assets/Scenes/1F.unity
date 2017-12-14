@@ -3048,12 +3048,12 @@ MonoBehaviour:
   - 
   IFile:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: 0cbcd225e31ecf242b9a21d803645a9f, type: 3}
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: ebfa31a50f69cb244b3ff134ef9c5503, type: 3}
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
-  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
-  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
-  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
-  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: ebfa31a50f69cb244b3ff134ef9c5503, type: 3}
+  - {fileID: 21300000, guid: ebfa31a50f69cb244b3ff134ef9c5503, type: 3}
   - {fileID: 0}
   currentLine: 1
   endAtLine: 7
@@ -5762,10 +5762,11 @@ MonoBehaviour:
   - "\uC77C\uC9C0\uB97C \uC8FC\uC6E0\uB2E4. \uAE30\uC5B5\uC774 \uB098\uC9C0 \uC54A\uC73C\uB2C8
     \uCE68\uCC29\uD558\uAC8C \uC77C\uC9C0\uB97C \uC774\uC6A9\uD558\uC5EC \uC0C1\uD669\uC744
     \uC815\uB9AC \uD558\uC790."
-  - " I \uBC84\uD2BC\uC744 \uC774\uC6A9\uD558\uC5EC \uB0B4\uAC00 \uAC00\uC9C0\uACE0
+  - " Q \uBC84\uD2BC\uC744 \uC774\uC6A9\uD558\uC5EC \uB0B4\uAC00 \uAC00\uC9C0\uACE0
     \uC788\uB294 \uC18C\uC9C0\uD488\uC744 \uD655\uC778\uC744 \uD560 \uC218 \uC788\uB2E4."
-  - "\uC9C0\uAE08 \uC0C1\uD669\uC744 \uC77C\uC9C0\uC5D0 \uAE30\uB85D\uD588\uB2E4.
-    I\uBC84\uD2BC\uC744 \uC774\uC6A9\uD558\uC5EC \uC77C\uC9C0\uB97C \uD655\uC778\uD558\uC790."
+  - "\uC18C\uC9C0\uD488\uC744 \uBCF4\uB824\uBA74 Z\uD0A4\uB85C \uD65C\uC131\uD654
+    \uD558\uACE0 \uBC29\uD5A5\uD0A4\uB85C \uC774\uB3D9\uD574 \uC544\uC774\uD15C\uC744
+    \uD655\uC778\uD560 \uC218 \uC788\uB2E4."
   - 
   IFile:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
@@ -6779,7 +6780,7 @@ MonoBehaviour:
   - "\uB9C8...\uB9D0\uC744 \uD558\uB294 \uC544\uAE30\uC778\uD615\uC744 \uC5BB\uC5C8\uB2E4."
   - 
   IFile:
-  - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
+  - {fileID: 21300000, guid: 0cbcd225e31ecf242b9a21d803645a9f, type: 3}
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
@@ -7300,10 +7301,11 @@ MonoBehaviour:
   - 
   DtextLines:
   - "\uCABD\uC9C0\uAC00 \uAF42\uD600\uC788\uB2E4."
-  - "\uAD8C\uD604\uC6B0 :"
-  - "\uC774\uC655\uADFC :"
+  - "\uAD8C\uD604\uC6B0 : \uB098\uB294 \uC544\uC9C1 \uB9CE\uC774 \uBAA8\uC790\uB77C\uB2E4."
+  - "\uC774\uC655\uADFC : \uAE30\uB9D0 \uACFC\uC81C\uAC00 \uAE30\uB9D0 \uC2DC\uD5D8\uBCF4\uB2E4
+    \uD798\uB4E0\uAC70 \uAC19\uC229\uB2C8\uB2E4...."
   - "\uC870\uBCD1\uD76C :"
-  - "\uAE40\uC0C1\uBBFC :"
+  - "\uAE40\uC0C1\uBBFC : \uC5ED\uC2DC \uC774\uBD88 \uBC16\uC740 \uC704\uD5D8\uD574\uC694..."
   - "... \uC4F8\uBAA8\uC5C6\uC5B4 \uBCF4\uC774\uB2C8 \uC81C\uC790\uB9AC\uC5D0 \uB450\uC790."
   - 
   IFile:
@@ -8005,7 +8007,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 2
-  m_Sprite: {fileID: 21300000, guid: d842eba086d5c6a45b306821346033d8, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 100b32512304a084b8f5618755c2b7b7, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -8023,7 +8025,7 @@ Transform:
   m_GameObject: {fileID: 1142564860}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.9, y: 4, z: 0}
-  m_LocalScale: {x: 0.3, y: 0.3, z: 1}
+  m_LocalScale: {x: 0.4, y: 0.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -8054,18 +8056,18 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0.13166583, y: -1.5799735}
+  m_Offset: {x: 0.04409337, y: -1.2672263}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 6, y: 8}
+    oldSize: {x: 5, y: 6}
     newSize: {x: 2.4, y: 2.4}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 4.8589106, y: 4.840053}
+  m_Size: {x: 2.5320697, y: 3.3138454}
   m_EdgeRadius: 0
 --- !u!82 &1142564865
 AudioSource:
@@ -10422,7 +10424,7 @@ MonoBehaviour:
   hideTransform: {fileID: 1516556197}
   offHideTransform: {fileID: 1999876113}
   ghostSeeTransform: {fileID: 636008811}
-  speed: 5
+  speed: 2
   lockDoor: {fileID: 758281333}
   openDoorText: {fileID: 1310023722}
   isShout: 0
@@ -10503,7 +10505,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -37.98, y: 17.69}
+  m_AnchoredPosition: {x: -38.04, y: 17.69}
   m_SizeDelta: {x: 8.95, y: 16.53}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!82 &1511025646
@@ -12845,6 +12847,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1926349983}
   - component: {fileID: 1926349984}
+  - component: {fileID: 1926349985}
   m_Layer: 0
   m_Name: DiaryManager
   m_TagString: Untagged
@@ -12878,6 +12881,87 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   characterController: {fileID: 1511025642}
   eventFlow: {fileID: 2126044063}
+  diarySound: {fileID: 8300000, guid: 79a3c9251f68bbf46a1729851d526f7b, type: 3}
+--- !u!82 &1926349985
+AudioSource:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1926349982}
+  m_Enabled: 1
+  serializedVersion: 4
+  OutputAudioMixerGroup: {fileID: 0}
+  m_audioClip: {fileID: 0}
+  m_PlayOnAwake: 1
+  m_Volume: 1
+  m_Pitch: 1
+  Loop: 0
+  Mute: 0
+  Spatialize: 0
+  SpatializePostEffects: 0
+  Priority: 128
+  DopplerLevel: 1
+  MinDistance: 1
+  MaxDistance: 500
+  Pan2D: 0
+  rolloffMode: 0
+  BypassEffects: 0
+  BypassListenerEffects: 0
+  BypassReverbZones: 0
+  rolloffCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - serializedVersion: 2
+      time: 1
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  panLevelCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
+  spreadCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 0
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  reverbZoneMixCustomCurve:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 2
+      time: 0
+      value: 1
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
 --- !u!1 &1958527147
 GameObject:
   m_ObjectHideFlags: 0
