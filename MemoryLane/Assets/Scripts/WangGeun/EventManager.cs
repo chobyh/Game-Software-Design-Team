@@ -9,7 +9,7 @@ public class EventManager : MonoBehaviour {
     public GameObject StartDoor;
     public GameObject NextDoor;
     public GameObject Ghost;
-    public int index = 0;
+    int index = 0;
 
     public AudioSource FlowAudio;
     public AudioClip GhostSound;

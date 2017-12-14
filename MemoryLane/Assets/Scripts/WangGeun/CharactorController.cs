@@ -30,12 +30,12 @@ public class CharactorController : MonoBehaviour {
     public bool haveBabyDoll = false;
     public bool haveShovel = false;
 
-    bool haveFathersLetter = false;
-    bool haveDaughtersLetter = false;
-    bool havePolice = false;
-    bool haveAward = false;
-    bool haveSketchBook = false;
-    bool havePicture = false;
+    public bool haveFathersLetter = false;
+    public bool haveDaughtersLetter = false;
+    public bool havePolice = false;
+    public bool haveAward = false;
+    public bool haveSketchBook = false;
+    public bool havePicture = false;
 	public bool haveAllitem = false;
 
     public bool isreadClock = false;
