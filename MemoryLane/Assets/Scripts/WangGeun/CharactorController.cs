@@ -192,7 +192,11 @@ public class CharactorController : MonoBehaviour {
 				havePicture = true;
 			} else if (other.transform.name.Equals ("Lanton")) {
 				haveLanton = true;
-			}
+			} else if (other.transform.name.Equals("KnifeGhost"))
+            {
+                haveBabyDoll = false;
+            }
+
 
             if (haveFathersLetter && haveDaughtersLetter && havePolice && haveAward && haveSketchBook && havePicture) {
 				haveAllitem = true;

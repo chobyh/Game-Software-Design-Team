@@ -13,14 +13,14 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_PixelRect:
     serializedVersion: 2
-    x: 0
+    x: 8
     y: 51
     width: 1600
     height: 801
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 542}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -42,10 +42,10 @@ MonoBehaviour:
     y: 30
     width: 1600
     height: 751
-  m_MinSize: {x: 679, y: 492}
-  m_MaxSize: {x: 14002, y: 14042}
+  m_MinSize: {x: 683, y: 492}
+  m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 10
+  controlID: 96
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -64,8 +64,8 @@ MonoBehaviour:
     y: 0
     width: 352
     height: 751
-  m_MinSize: {x: 275, y: 50}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 277, y: 71}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 15}
   m_Panes:
   - {fileID: 15}
@@ -89,8 +89,8 @@ MonoBehaviour:
     y: 0
     width: 312
     height: 455
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 202, y: 221}
+  m_MaxSize: {x: 4002, y: 4021}
   m_ActualView: {fileID: 16}
   m_Panes:
   - {fileID: 16}
@@ -207,10 +207,10 @@ MonoBehaviour:
     y: 0
     width: 1248
     height: 751
-  m_MinSize: {x: 404, y: 492}
+  m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 68
+  controlID: 97
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -231,10 +231,10 @@ MonoBehaviour:
     y: 0
     width: 1248
     height: 455
-  m_MinSize: {x: 404, y: 221}
-  m_MaxSize: {x: 8004, y: 4021}
+  m_MinSize: {x: 406, y: 221}
+  m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 69
+  controlID: 98
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -253,8 +253,8 @@ MonoBehaviour:
     y: 0
     width: 936
     height: 455
-  m_MinSize: {x: 200, y: 200}
-  m_MaxSize: {x: 4000, y: 4000}
+  m_MinSize: {x: 204, y: 221}
+  m_MaxSize: {x: 4004, y: 4021}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -446,7 +446,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 0
+    x: 8
     y: 555
     width: 1246
     height: 275
@@ -468,13 +468,13 @@ MonoBehaviour:
   m_LastFolders:
   - Assets/Scripts/WangGeun
   m_LastFoldersGridSize: 71
-  m_LastProjectPath: "D:\\\uBCD1\uD76C\\Game-Software-Design-Team\\MemoryLane"
+  m_LastProjectPath: C:\Users\user\Documents\GitHub\Game-Software-Design-Team\MemoryLane
   m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 98}
-    m_SelectedIDs: 922b0000
-    m_LastClickedID: 11154
-    m_ExpandedIDs: 00000000d2290000002a0000542c0000d02c0000d42c00003432000036320000383200003a3200003c3200003e32000040320000423200004432000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 95}
+    m_SelectedIDs: f62b0000
+    m_LastClickedID: 11254
+    m_ExpandedIDs: 000000000e2a00003c2a0000bc2c0000442d00004c2d0000183300001a3300001c3300001e330000203300002233000024330000263300002833000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -502,7 +502,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 00000000d2290000002a0000542c0000d02c0000d42c00003432000036320000383200003a3200003c3200003e320000403200004232000044320000
+    m_ExpandedIDs: 000000000e2a00003c2a0000bc2c0000442d00004c2d0000183300001a3300001c3300001e3300002033000022330000243300002633000028330000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -579,7 +579,7 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 1250
+    x: 1258
     y: 100
     width: 350
     height: 730
@@ -612,15 +612,15 @@ MonoBehaviour:
   m_DepthBufferBits: 0
   m_Pos:
     serializedVersion: 2
-    x: 0
+    x: 8
     y: 100
     width: 310
     height: 434
   m_TreeViewState:
     scrollPos: {x: 0, y: 0}
-    m_SelectedIDs: 
-    m_LastClickedID: 0
-    m_ExpandedIDs: f050ffff96f3ffff00000000f22c0000b42d0000c02e0000342f0000682f0000bc310000
+    m_SelectedIDs: 6a2d0000
+    m_LastClickedID: 11626
+    m_ExpandedIDs: c6f2ffff000000005a2e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -665,7 +665,7 @@ MonoBehaviour:
   m_DepthBufferBits: 32
   m_Pos:
     serializedVersion: 2
-    x: 314
+    x: 322
     y: 100
     width: 932
     height: 434
