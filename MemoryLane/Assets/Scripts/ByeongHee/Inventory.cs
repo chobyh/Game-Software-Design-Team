@@ -3,35 +3,40 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class Inventory : MonoBehaviour {
+public class Inventory : MonoBehaviour
+{
 
-	public List<GameObject> Slots = new List<GameObject> ();
-	public List<Item> Items = new List<Item>();
-	public GameObject slots;
+    public List<GameObject> Slots = new List<GameObject>();
+    public List<Item> Items = new List<Item>();
+    public GameObject slots;
 
-	ItemDataBase database;
-	int x = -77;
-	int y = 80;
+    ItemDataBase database;
+    int x = -77;
+    int y = 80;
 
-	public int n = 0;
+    public int n = 0;
     int num1, num2, num3, num4, num5, num6, num7, num8, num9, num10, num11 = 0;
-    
+
 
     public CharactorController Gameitem;
 
-	void Update()
-	{
-		if (Slots [n].transform.GetChild (1).gameObject.activeInHierarchy == false) 
-		{ 
-			if (Input.GetKeyDown (KeyCode.Z)) {
-				Slots [n].transform.GetChild (1).gameObject.SetActive (true);
-			} 
-		} else {
-			if (Input.GetKeyDown (KeyCode.Z)) {
-				Slots [n].transform.GetChild (1).gameObject.SetActive (false);
-				n = 0;
-			} 
-		}
+    void Update()
+    {
+        if (Slots[n].transform.GetChild(1).gameObject.activeInHierarchy == false)
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                Slots[n].transform.GetChild(1).gameObject.SetActive(true);
+            }
+        }
+        else
+        {
+            if (Input.GetKeyDown(KeyCode.Z))
+            {
+                Slots[n].transform.GetChild(1).gameObject.SetActive(false);
+                n = 0;
+            }
+        }
         if (Slots[n].transform.GetChild(1).gameObject.activeInHierarchy == true)
         {
             if (Input.GetKeyDown(KeyCode.RightArrow) == true)
@@ -60,20 +65,20 @@ public class Inventory : MonoBehaviour {
             }
         }
 
-       /* if (Gameitem.haveDiary == true && num1 == 0)
-        {
-            addItem(0);
-            num1 += 1;
-        }
-        if(Gameitem.haveDoorKey == true && num2 == 0)
-        {
-            addItem(0);
-            num2 += 1;
-        }*/
+        /*( if (Gameitem.haveDiary == true && num1 == 0)
+         {
+             addItem(0);
+             num1 += 1;
+         }*/
+         if(Gameitem.haveDoorKey == true && num2 == 0)
+         {
+             addItem(1);
+             num2 += 1;
+         }
         if (Gameitem.haveBabyDoll == true && num1 == 0)
         {
             addItem(0);
-            num1+= 1;
+            num1 += 1;
         }
         if (Gameitem.haveRemote == true && num4 == 0)
         {
@@ -117,30 +122,34 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-	void Start () {
-        
-		int Slotamount = 0;
+    void Start()
+    {
+
+        int Slotamount = 0;
         Gameitem = Gameitem.gameObject.GetComponent<CharactorController>();
-		database = GameObject.FindGameObjectWithTag ("ItemDataBase").GetComponent<ItemDataBase> ();
-		for (int i = 1; i < 6; i++) {
-			for (int k = 1; k < 5; k++) {
-				GameObject slot = (GameObject)Instantiate (slots);
-				slot.GetComponent<SlotScript> ().slotNumber = Slotamount;
-				Slots.Add (slot);
-				Items.Add (new Item ());
-				slot.transform.SetParent(this.gameObject.transform);
-				slot.name = "Slot" + i + "." + k;
-				slot.GetComponent<RectTransform> ().localPosition = new Vector3 (x, y, 0);
+        database = GameObject.FindGameObjectWithTag("ItemDataBase").GetComponent<ItemDataBase>();
+        for (int i = 1; i < 6; i++)
+        {
+            for (int k = 1; k < 5; k++)
+            {
+                GameObject slot = (GameObject)Instantiate(slots);
+                slot.GetComponent<SlotScript>().slotNumber = Slotamount;
+                Slots.Add(slot);
+                Items.Add(new Item());
+                slot.transform.SetParent(this.gameObject.transform);
+                slot.name = "Slot" + i + "." + k;
+                slot.GetComponent<RectTransform>().localPosition = new Vector3(x, y, 0);
                 x = x + 50;
-				if (k == 4) {
-					x = -77;
-					y = y - 40;
-				}
-				Slotamount++;
-			}
-		}
-        
-	}
+                if (k == 4)
+                {
+                    x = -77;
+                    y = y - 40;
+                }
+                Slotamount++;
+            }
+        }
+
+    }
 
     void addItem(int id)
     {
@@ -157,15 +166,15 @@ public class Inventory : MonoBehaviour {
         }
     }
 
-	void addItemAtEmptySlot(Item item)
-	{
-		for (int i = 0; i < Items.Count; i++) 
-		{
-			if (Items [i].itemName == null) 
-			{
-				Items [i] = item;
-				break;
-			}
-		}
-	}
+    void addItemAtEmptySlot(Item item)
+    {
+        for (int i = 0; i < Items.Count; i++)
+        {
+            if (Items[i].itemName == null)
+            {
+                Items[i] = item;
+                break;
+            }
+        }
+    }
 }

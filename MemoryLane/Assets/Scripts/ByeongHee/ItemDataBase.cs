@@ -7,7 +7,7 @@ public class ItemDataBase : MonoBehaviour {
 	public List<Item> items = new List<Item> ();
 	// Use this for initialization
 	void Start () {
-        //items.Add(new Item("diary", 0, "힌트", 10, Item.ItemType.Hint));
+        items.Add(new Item("Key 1", 1, "힌트", 10, Item.ItemType.Hint));
         items.Add(new Item("Babt_Doll 1", 0, "힌트", 10, Item.ItemType.Hint));
         items.Add(new Item("Remote 1", 2, "힌트", 10, Item.ItemType.Hint));
         items.Add(new Item("Shovel 1", 3, "힌트", 10, Item.ItemType.Hint));

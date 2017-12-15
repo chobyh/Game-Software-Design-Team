@@ -6,6 +6,7 @@ public class KeyManager : MonoBehaviour {
 
 	public Inventory inventory;
 	public DailyLog dailylog;
+    public GameObject[] DailyDesc;
 	// Use this for initialization
 	void Start () {
 
@@ -48,7 +49,12 @@ public class KeyManager : MonoBehaviour {
         {
             inventory.gameObject.SetActive(false);
             dailylog.gameObject.SetActive(false);
-           // dailylog.DailyDesc1.SetActive(false);
+            for (int i = 0; i < 14; i++)
+            {
+                dailylog.DailyDesc[i].SetActive(false);
+            }
+            inventory.n = 0;
+            dailylog.t = 0;
         }
 	}
 }
