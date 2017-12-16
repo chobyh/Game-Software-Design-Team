@@ -9,6 +9,7 @@ public class DailyLog : MonoBehaviour
     public List<DailyItem> Items2 = new List<DailyItem>();
     public GameObject[] DailyDesc;
     public GameObject slots2;
+    public GameObject DailyDesc2;
 
     DailyDataBase database;
     int x = -75;
@@ -38,8 +39,6 @@ public class DailyLog : MonoBehaviour
                     x = -75;
                     y = y - 40;
                 }
-                slot1.transform.GetChild(2).gameObject.SetActive(true);
-                Slots2[0].transform.GetChild(2).gameObject.SetActive(false);
                 Slotamount++;
             }
         }
@@ -86,24 +85,30 @@ public class DailyLog : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow) == true)
             {
-                Slots2[t + 5].transform.GetChild(1).gameObject.SetActive(true);
+                Slots2[t + 4].transform.GetChild(1).gameObject.SetActive(true);
                 Slots2[t].transform.GetChild(1).gameObject.SetActive(false);
-                t = t + 5;
+                t = t + 4;
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow) == true)
             {
-                Slots2[t - 5].transform.GetChild(1).gameObject.SetActive(true);
+                Slots2[t - 4].transform.GetChild(1).gameObject.SetActive(true);
                 Slots2[t].transform.GetChild(1).gameObject.SetActive(false);
-                t = t - 5;
+                t = t - 4;
             }
         }
+        
         //일지 사용
         for (int i = 0; i < 15; i++)
         {
             if (Slots2[i].transform.GetChild(1).gameObject.activeInHierarchy == true)
             {
-                if (DailyDesc[i].transform.gameObject.activeInHierarchy == false && Slots2[i].transform.GetChild(2).gameObject.activeInHierarchy == false)
+                if (DailyDesc[i].transform.gameObject.activeInHierarchy == false)
                 {
+                    if (DailyDesc2 != null)
+                    {
+                        DailyDesc2.transform.gameObject.SetActive(false);
+                        DailyDesc2 = null;
+                    }
                     SpaceOpenEvent(DailyDesc[i]);
                 }
                 else
@@ -127,7 +132,11 @@ public class DailyLog : MonoBehaviour
             if (database.items2[i].itemID2 == id2)
             {
                 DailyItem DailyItem = database.items2[i];
-                addItemAtEmptySlot(DailyItem);
+                //addItemAtEmptySlot(DailyItem);
+                if(Items2[id2].itemName2 == null)
+                {
+                    Items2[id2] = DailyItem;
+                }
                 break;
             }
         }
@@ -149,7 +158,7 @@ public class DailyLog : MonoBehaviour
         {
             DailyDesc.SetActive(true);
             DailyDesc.transform.GetComponent<RectTransform>().localPosition = new Vector3(x + 120, y + 120 );
+            DailyDesc2 = DailyDesc;
         }
-
     }
 }

@@ -8,10 +8,11 @@ public class Item
 {
 
     public string itemName;
+    public string itemImageName;
     public int itemID;
     public string itemDesc;
     public Sprite itemIcon;
-    public GameObject itemModel;
+    public Sprite itemInfo;
     public int itemValue;
     public ItemType itemType;
 
@@ -20,16 +21,16 @@ public class Item
         Hint,
         Collects
     }
-    public Item(string name, int id, string desc, int value, ItemType type)
+    public Item(string name, string imagename, int id, string desc, int value, ItemType type)
     {
         itemName = name;
+        itemImageName = imagename;
         itemID = id;
         itemDesc = desc;
         itemValue = value;
         itemType = type;
         itemIcon = Resources.Load<Sprite>(name);
-        itemModel = Resources.Load<GameObject>("DroppedItem");
-
+        itemInfo = Resources.Load<Sprite>(imagename);
     }
     public Item()
     {

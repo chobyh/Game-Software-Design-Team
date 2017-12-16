@@ -7,8 +7,9 @@ public class KeyManager : MonoBehaviour {
 	public Inventory inventory;
 	public DailyLog dailylog;
     public GameObject[] DailyDesc;
-	// Use this for initialization
-	void Start () {
+    public GameObject[] ItemDesc;
+    // Use this for initialization
+    void Start () {
 
     }
 	
@@ -23,11 +24,13 @@ public class KeyManager : MonoBehaviour {
                 inventory.gameObject.SetActive (true);
             }			
 		} else {
-			if (Input.GetKeyDown (KeyCode.I)) {
-				inventory.gameObject.SetActive (false);
-				inventory.Slots [inventory.n].transform.GetChild (1).gameObject.SetActive (false);
-				inventory.n = 0;
-			}	
+            if (Input.GetKeyDown(KeyCode.I))
+            {
+                inventory.gameObject.SetActive(false);
+                inventory.Slots[inventory.n].transform.GetChild(1).gameObject.SetActive(false);
+                inventory.n = 0;
+
+            }
 		}
 		if (dailylog.gameObject.activeInHierarchy == false) {
 			if (Input.GetKeyDown (KeyCode.Q)) {
@@ -38,23 +41,33 @@ public class KeyManager : MonoBehaviour {
 				dailylog.gameObject.SetActive (true);
 			}			
 		} else {
-			if (Input.GetKeyDown (KeyCode.Q)) {
-				dailylog.gameObject.SetActive (false);
-				dailylog.Slots2 [dailylog.t].transform.GetChild (1).gameObject.SetActive (false);
-				dailylog.t = 0;
-			}	
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                dailylog.gameObject.SetActive(false);
+                dailylog.Slots2[dailylog.t].transform.GetChild(1).gameObject.SetActive(false);
+                dailylog.t = 0;
+
+                for (int i = 0; i < 14; i++)
+                {
+                    dailylog.DailyDesc[i].SetActive(false);
+                }
+            }	
 		}
-        
-        if(Input.GetKeyDown(KeyCode.Escape) == true)
+
+        if (Input.GetKeyDown(KeyCode.Escape) == true)
         {
             inventory.gameObject.SetActive(false);
             dailylog.gameObject.SetActive(false);
+            inventory.Slots[inventory.n].transform.GetChild(1).gameObject.SetActive(false);
+            dailylog.Slots2[dailylog.t].transform.GetChild(1).gameObject.SetActive(false);
+            inventory.n = 0;
+            dailylog.t = 0;
             for (int i = 0; i < 14; i++)
             {
                 dailylog.DailyDesc[i].SetActive(false);
+                inventory.ItemDesc[i].SetActive(false);
             }
-            inventory.n = 0;
-            dailylog.t = 0;
+
         }
 	}
 }

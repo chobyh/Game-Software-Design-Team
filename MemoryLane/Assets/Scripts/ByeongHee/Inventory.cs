@@ -9,7 +9,9 @@ public class Inventory : MonoBehaviour
     public List<GameObject> Slots = new List<GameObject>();
     public List<Item> Items = new List<Item>();
     public GameObject slots;
-
+    public Image ItemDesc;
+    public GameObject ItemDesc2;
+    public SlotScript itemImage;
     ItemDataBase database;
     int x = -77;
     int y = 80;
@@ -53,32 +55,25 @@ public class Inventory : MonoBehaviour
             }
             else if (Input.GetKeyDown(KeyCode.DownArrow) == true)
             {
-                Slots[n + 5].transform.GetChild(1).gameObject.SetActive(true);
+                Slots[n + 4].transform.GetChild(1).gameObject.SetActive(true);
                 Slots[n].transform.GetChild(1).gameObject.SetActive(false);
-                n = n + 5;
+                n = n + 4;
             }
             else if (Input.GetKeyDown(KeyCode.UpArrow) == true)
             {
-                Slots[n - 5].transform.GetChild(1).gameObject.SetActive(true);
+                Slots[n - 4].transform.GetChild(1).gameObject.SetActive(true);
                 Slots[n].transform.GetChild(1).gameObject.SetActive(false);
-                n = n - 5;
+                n = n - 4;
             }
         }
-
-        /*( if (Gameitem.haveDiary == true && num1 == 0)
-         {
-             addItem(0);
-             num1 += 1;
-         }*/
-         if(Gameitem.haveDoorKey == true && num2 == 0)
-         {
-             addItem(1);
-             num2 += 1;
-         }
         if (Gameitem.haveBabyDoll == true && num1 == 0)
         {
             addItem(0);
             num1 += 1;
+        }
+        else if (Gameitem.haveBabyDoll == false && num1 == 1)
+        {
+
         }
         if (Gameitem.haveRemote == true && num4 == 0)
         {
@@ -119,6 +114,30 @@ public class Inventory : MonoBehaviour
         {
             addItem(9);
             num11 += 1;
+        }
+        //인벤토리 사용
+        for (int i = 0; i < 3; i++)
+        {
+            if (Slots[i].transform.GetChild(1).gameObject.activeInHierarchy == true)
+            {
+                if (ItemDesc.transform.gameObject.activeInHierarchy == false)
+                {
+                    if (ItemDesc2 != null)
+                    {
+                        ItemDesc2.transform.gameObject.SetActive(false);
+                        ItemDesc2 = null;
+                    }
+                    SpaceOpenEvent(Item item);
+                }
+                else
+                {
+                    if (Input.GetKeyDown(KeyCode.Space) == true)
+                    {
+                        ItemDesc.transform.gameObject.SetActive(false);
+                    }
+                }
+                break;
+            }
         }
     }
 
@@ -165,7 +184,6 @@ public class Inventory : MonoBehaviour
             }
         }
     }
-
     void addItemAtEmptySlot(Item item)
     {
         for (int i = 0; i < Items.Count; i++)
@@ -175,6 +193,17 @@ public class Inventory : MonoBehaviour
                 Items[i] = item;
                 break;
             }
+        }
+    }
+    void SpaceOpenEvent(Item item)
+    {
+        if (Input.GetKeyDown(KeyCode.Space) == true)
+        {
+            if (item.itemInfo != null)
+            {
+                ItemDesc.sprite = item.itemInfo;
+            }
+           
         }
     }
 }
