@@ -65,7 +65,7 @@ public class KeyManager : MonoBehaviour {
             for (int i = 0; i < 14; i++)
             {
                 dailylog.DailyDesc[i].SetActive(false);
-                inventory.ItemDesc[i].SetActive(false);
+                //inventory.ItemDesc[i].SetActive(false);
             }
 
         }
