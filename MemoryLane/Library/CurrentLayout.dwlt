@@ -20,7 +20,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 300}
+  m_MinSize: {x: 950, y: 392}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &2
 MonoBehaviour:
@@ -45,7 +45,11 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 342}
   m_MaxSize: {x: 12008, y: 8042}
   vertical: 0
+<<<<<<< HEAD
   controlID: 99
+=======
+  controlID: 113
+>>>>>>> 75092b39c4f767a57ba173f250f757b899fdeb65
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,7 +214,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 342}
   m_MaxSize: {x: 8006, y: 8042}
   vertical: 1
-  controlID: 45
+  controlID: 59
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -234,7 +238,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 46
+  controlID: 60
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -462,19 +466,34 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
+<<<<<<< HEAD
     - Assets
   m_ViewMode: 1
   m_StartGridSize: 59
   m_LastFolders:
   - Assets
+=======
+    - Assets/Scripts/ByeongHee
+  m_ViewMode: 1
+  m_StartGridSize: 59
+  m_LastFolders:
+  - Assets/Scripts/ByeongHee
+>>>>>>> 75092b39c4f767a57ba173f250f757b899fdeb65
   m_LastFoldersGridSize: 59
   m_LastProjectPath: C:\Users\user\Documents\GitHub\Game-Software-Design-Team\MemoryLane
   m_IsLocked: 0
   m_FolderTreeState:
+<<<<<<< HEAD
     scrollPos: {x: 0, y: 95}
     m_SelectedIDs: 04290000
     m_LastClickedID: 10500
     m_ExpandedIDs: 000000003e2600006c26000018290000b4290000bc2900008e2f0000902f0000922f0000942f0000962f0000982f00009a2f00009c2f00009e2f0000
+=======
+    scrollPos: {x: 0, y: 99}
+    m_SelectedIDs: 14270000
+    m_LastClickedID: 10004
+    m_ExpandedIDs: 00000000362600006426000010290000ac290000b4290000862f0000882f00008a2f00008c2f00008e2f0000902f0000922f0000942f0000962f000000ca9a3bffffff7f
+>>>>>>> 75092b39c4f767a57ba173f250f757b899fdeb65
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -502,7 +521,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 000000003e2600006c26000018290000b4290000bc2900008e2f0000902f0000922f0000942f0000962f0000982f00009a2f00009c2f00009e2f0000
+=======
+    m_ExpandedIDs: 00000000362600006426000010290000ac290000b4290000862f0000882f00008a2f00008c2f00008e2f0000902f0000922f0000942f0000962f0000
+>>>>>>> 75092b39c4f767a57ba173f250f757b899fdeb65
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -527,9 +550,15 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
   m_ListAreaState:
+<<<<<<< HEAD
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
     m_HadKeyboardFocusLastEvent: 0
+=======
+    m_SelectedInstanceIDs: 36070000
+    m_LastClickedInstanceID: 1846
+    m_HadKeyboardFocusLastEvent: 1
+>>>>>>> 75092b39c4f767a57ba173f250f757b899fdeb65
     m_ExpandedInstanceIDs: 702b0000342a0000de2b0000902a0000ee2a0000be2b0000282a00004e2a0000a82b00005c290000382700005e270000000000003e270000e626000078270000e22b0000ce3200007c2b0000a2290000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -556,7 +585,7 @@ MonoBehaviour:
     m_NewAssetIndexInList: -1
     m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 59
-  m_DirectoriesAreaWidth: 115
+  m_DirectoriesAreaWidth: 151
 --- !u!114 &15
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -620,7 +649,11 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
+<<<<<<< HEAD
     m_ExpandedIDs: 1afcffff00000000
+=======
+    m_ExpandedIDs: 1afcffff00000000c22a00004c2c0000862d0000aa2d0000242f0000
+>>>>>>> 75092b39c4f767a57ba173f250f757b899fdeb65
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 

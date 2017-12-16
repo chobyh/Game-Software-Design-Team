@@ -127,7 +127,11 @@ public class Inventory : MonoBehaviour
                         ItemDesc2.transform.gameObject.SetActive(false);
                         ItemDesc2 = null;
                     }
+<<<<<<< HEAD
                     SpaceOpenEvent(item);
+=======
+                   // SpaceOpenEvent(Item item);
+>>>>>>> 75092b39c4f767a57ba173f250f757b899fdeb65
                 }
                 else
                 {
