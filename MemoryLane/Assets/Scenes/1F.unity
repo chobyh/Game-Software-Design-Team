@@ -3185,12 +3185,12 @@ MonoBehaviour:
   - 
   IFile:
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
-  - {fileID: 21300000, guid: 0cbcd225e31ecf242b9a21d803645a9f, type: 3}
+  - {fileID: 21300000, guid: 8b2c03a17c8895d4abd9a6dae64ace1c, type: 3}
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
-  - {fileID: 21300000, guid: ebfa31a50f69cb244b3ff134ef9c5503, type: 3}
+  - {fileID: 21300000, guid: 1fd3e056604d24d41919e8af4b963280, type: 3}
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
-  - {fileID: 21300000, guid: ebfa31a50f69cb244b3ff134ef9c5503, type: 3}
-  - {fileID: 21300000, guid: ebfa31a50f69cb244b3ff134ef9c5503, type: 3}
+  - {fileID: 21300000, guid: 1fd3e056604d24d41919e8af4b963280, type: 3}
+  - {fileID: 21300000, guid: 1fd3e056604d24d41919e8af4b963280, type: 3}
   - {fileID: 0}
   currentLine: 1
   endAtLine: 7
@@ -3702,10 +3702,7 @@ MonoBehaviour:
   Slots: []
   Items: []
   slots: {fileID: 1466152846974172, guid: 314adabb1f7d0bc448a28b44aa8f7180, type: 2}
-  ItemDesc:
-  - {fileID: 820731894}
-  - {fileID: 1709134621}
-  - {fileID: 1667676440}
+  ItemDesc: {fileID: 0}
   ItemDesc2: {fileID: 0}
   itemImage: {fileID: 0}
   n: 0
@@ -7195,7 +7192,7 @@ MonoBehaviour:
   - "\uB9C8...\uB9D0\uC744 \uD558\uB294 \uC544\uAE30\uC778\uD615\uC744 \uC5BB\uC5C8\uB2E4."
   - 
   IFile:
-  - {fileID: 21300000, guid: 0cbcd225e31ecf242b9a21d803645a9f, type: 3}
+  - {fileID: 21300000, guid: 8b2c03a17c8895d4abd9a6dae64ace1c, type: 3}
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 21300000, guid: 91b8abe5c6f3ce74fb4d181aaffd8f1d, type: 3}
   - {fileID: 0}
