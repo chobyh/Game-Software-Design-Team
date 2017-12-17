@@ -7,6 +7,8 @@ public class DiaryManager : MonoBehaviour {
     public CharactorController characterController;
     public EventManager eventFlow;
     public DailyLog dailylog;
+    GameObject writingMark;
+    bool iswrite = false;
     bool UpdateFamliy;
     bool UpdateNewspaper;
     bool UpdateAward;
@@ -19,6 +21,7 @@ public class DiaryManager : MonoBehaviour {
     {
         diary = GetComponent<AudioSource>();
         diary.clip = diarySound;
+        writingMark = GameObject.Find("UI").transform.Find("Canvas").transform.Find("Write").gameObject;
     }
 
     void Update()
@@ -31,30 +34,40 @@ public class DiaryManager : MonoBehaviour {
     {
         if(eventFlow.index == 1 && num1 == 0) // 2번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             diary.Play();
             dailylog.addItem(1);
-            num1 += 1; 
+            num1 += 1;
         }
         else if(characterController.isShout && num2 == 0) // 3번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             diary.Play();
             dailylog.addItem(2);
             num2 += 1;
         }
         else if (characterController.isreadGuiltybook && num3 == 0) // 4번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             diary.Play();
             dailylog.addItem(3);
             num3 += 1;
         }
         else if (characterController.isreadCalender && num4 == 0) // 5번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             diary.Play();
             dailylog.addItem(8);
             num4 += 1;
         }
         else if (characterController.isreadFamilyPhoto && num5 == 0) // 6번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             UpdateFamliy = true;
             diary.Play();
             dailylog.addItem(6);
@@ -62,6 +75,8 @@ public class DiaryManager : MonoBehaviour {
         }
         else if (characterController.isreadNewspaper && num6 == 0) // 7번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             UpdateNewspaper = true;
             diary.Play();
             dailylog.addItem(4);
@@ -69,30 +84,40 @@ public class DiaryManager : MonoBehaviour {
         }
         else if (UpdateFamliy && UpdateNewspaper && num7 == 0) // 8번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             diary.Play();
             dailylog.addItem(7);
             num7 += 1;
         }
         else if (characterController.isreadTV && num8 == 0) // 9번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             diary.Play();
             dailylog.addItem(5);
             num8 += 1;
         }
         else if (characterController.haveFathersLetter && num9 == 0) // 10번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             diary.Play();
             dailylog.addItem(9);
             num9 += 1;
         }
         else if (characterController.haveDaughtersLetter && num10 == 0) // 11번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             diary.Play();
             dailylog.addItem(10);
             num10 += 1;
         }
         else if (characterController.haveAward && num11 == 0) // 12번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             UpdateAward = true;
             diary.Play();
             dailylog.addItem(11);
@@ -100,6 +125,8 @@ public class DiaryManager : MonoBehaviour {
         }
         else if (characterController.havePicture && num12 == 0) // 13번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             UpdatePicture = true;
             diary.Play();
             dailylog.addItem(12);
@@ -107,9 +134,25 @@ public class DiaryManager : MonoBehaviour {
         }
         else if (UpdatePicture && UpdateAward && num13 == 0) // 14번 일지
         {
+            MarkVisable();
+            Invoke("MarkVisable", 1.0f);
             diary.Play();
             dailylog.addItem(13);
             num13 += 1;
         }
+    }
+
+    void MarkVisable()
+    {
+        if(iswrite == false)
+        {
+            writingMark.SetActive(true);
+            iswrite = true;
+        }
+        else
+        {
+            writingMark.SetActive(false);
+        }
+        
     }
 }

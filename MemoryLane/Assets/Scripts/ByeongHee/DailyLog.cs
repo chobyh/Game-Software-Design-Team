@@ -11,16 +11,23 @@ public class DailyLog : MonoBehaviour
     public GameObject slots2;
     public GameObject DailyDesc2;
 
-    DailyDataBase database;
+	[SerializeField]DailyDataBase database;
     int x = -75;
     int y = 80;
 
     public int t = 0;
     // Use this for initialization
-    void Start()
+
+	void Start()
+	{
+		if (Items2.Count == 0)
+			Init ();
+	}
+
+    public void Init()
     {
         int Slotamount = 0;
-        database = GameObject.FindGameObjectWithTag("DailyDataBase").GetComponent<DailyDataBase>();
+
         for (int i = 1; i < 6; i++)
         {
             for (int k = 1; k < 5; k++)
@@ -71,60 +78,65 @@ public class DailyLog : MonoBehaviour
         //z상태시 방향키로 이동
         if (Slots2[t].transform.GetChild(1).gameObject.activeInHierarchy == true)
         {
-            if (Input.GetKeyDown(KeyCode.RightArrow) == true)
-            {
-                Slots2[t + 1].transform.GetChild(1).gameObject.SetActive(true);
-                Slots2[t].transform.GetChild(1).gameObject.SetActive(false);
-                t = t + 1;
-            }
-            else if (Input.GetKeyDown(KeyCode.LeftArrow) == true)
-            {
-                Slots2[t - 1].transform.GetChild(1).gameObject.SetActive(true);
-                Slots2[t].transform.GetChild(1).gameObject.SetActive(false);
-                t = t - 1;
-            }
-            else if (Input.GetKeyDown(KeyCode.DownArrow) == true)
-            {
-                Slots2[t + 4].transform.GetChild(1).gameObject.SetActive(true);
-                Slots2[t].transform.GetChild(1).gameObject.SetActive(false);
-                t = t + 4;
-            }
-            else if (Input.GetKeyDown(KeyCode.UpArrow) == true)
-            {
-                Slots2[t - 4].transform.GetChild(1).gameObject.SetActive(true);
-                Slots2[t].transform.GetChild(1).gameObject.SetActive(false);
-                t = t - 4;
-            }
+			int preSlotNum = t;
+			if (Input.GetKeyDown(KeyCode.RightArrow) == true)
+				t = t + 1;
+			else if (Input.GetKeyDown(KeyCode.LeftArrow) == true)
+				t = t - 1;
+			else if (Input.GetKeyDown(KeyCode.DownArrow) == true)
+				t = t + 4;
+			else if (Input.GetKeyDown(KeyCode.UpArrow) == true)
+				t = t - 4;
+
+
+			if (t >= 0 && t < Slots2.Count) 
+			{
+				Slots2 [preSlotNum].transform.GetChild (1).gameObject.SetActive (false);
+				Slots2 [t].transform.GetChild (1).gameObject.SetActive (true);
+			}
+			else
+			{
+				t = preSlotNum;
+			}
         }
         
-        //일지 사용
-        for (int i = 0; i < 15; i++)
-        {
-            if (Slots2[i].transform.GetChild(1).gameObject.activeInHierarchy == true)
-            {
-                if (DailyDesc[i].transform.gameObject.activeInHierarchy == false)
-                {
-                    if (DailyDesc2 != null)
-                    {
-                        DailyDesc2.transform.gameObject.SetActive(false);
-                        DailyDesc2 = null;
-                    }
-                    SpaceOpenEvent(DailyDesc[i]);
-                }
-                else
-                {
-                    if (Input.GetKeyDown(KeyCode.Space) == true)
-                    {
-                        DailyDesc[i].transform.gameObject.SetActive(false);
-                    }
-                }
-                break;
-            }
-        }
 
+		if (Input.GetKeyDown (KeyCode.Space) == true) 
+		{
+			ShowDesc ();	
+		}
+  
     }
+
+	void ShowDesc()
+	{
+		if (DailyDesc2 != null)
+			DailyDesc2.transform.gameObject.SetActive(false);
+
+		if (t >= DailyDesc.Length)
+			return;
+		
+		if (Slots2 [t].transform.GetChild (1).gameObject.activeInHierarchy == false)
+			return;
+
+		if (Items2 [t].itemName2 == null)
+			return;
+
+
+		if (DailyDesc2 != DailyDesc [t]) 
+		{
+			SpaceOpenEvent (DailyDesc [t]);
+			DailyDesc2 = DailyDesc [t];
+		}
+		else
+		{
+			DailyDesc2 = null;
+		}
+	}
     public void addItem(int id2)
     {
+		if (Items2.Count == 0)
+			Init ();
 
         for (int i = 0; i < database.items2.Count; i++)
         {
@@ -132,7 +144,6 @@ public class DailyLog : MonoBehaviour
             if (database.items2[i].itemID2 == id2)
             {
                 DailyItem DailyItem = database.items2[i];
-                //addItemAtEmptySlot(DailyItem);
                 if(Items2[id2].itemName2 == null)
                 {
                     Items2[id2] = DailyItem;

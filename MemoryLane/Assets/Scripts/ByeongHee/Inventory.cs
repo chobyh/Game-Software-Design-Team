@@ -41,39 +41,33 @@ public class Inventory : MonoBehaviour
         }
         if (Slots[n].transform.GetChild(1).gameObject.activeInHierarchy == true)
         {
+			int preSlotNum = n;
             if (Input.GetKeyDown(KeyCode.RightArrow) == true)
-            {
-                Slots[n + 1].transform.GetChild(1).gameObject.SetActive(true);
-                Slots[n].transform.GetChild(1).gameObject.SetActive(false);
                 n = n + 1;
-            }
             else if (Input.GetKeyDown(KeyCode.LeftArrow) == true)
-            {
-                Slots[n - 1].transform.GetChild(1).gameObject.SetActive(true);
-                Slots[n].transform.GetChild(1).gameObject.SetActive(false);
                 n = n - 1;
-            }
             else if (Input.GetKeyDown(KeyCode.DownArrow) == true)
-            {
-                Slots[n + 4].transform.GetChild(1).gameObject.SetActive(true);
-                Slots[n].transform.GetChild(1).gameObject.SetActive(false);
                 n = n + 4;
-            }
             else if (Input.GetKeyDown(KeyCode.UpArrow) == true)
-            {
-                Slots[n - 4].transform.GetChild(1).gameObject.SetActive(true);
-                Slots[n].transform.GetChild(1).gameObject.SetActive(false);
                 n = n - 4;
-            }
+
+
+			if (n >= 0 && n < Slots.Count) 
+			{
+				Slots [preSlotNum].transform.GetChild (1).gameObject.SetActive (false);
+				Slots [n].transform.GetChild (1).gameObject.SetActive (true);
+			}
+			else
+			{
+				n = preSlotNum;
+			}
+				
+
         }
         if (Gameitem.haveBabyDoll == true && num1 == 0)
         {
             addItem(0);
             num1 += 1;
-        }
-        else if (Gameitem.haveBabyDoll == false && num1 == 1)
-        {
-
         }
         if (Gameitem.haveRemote == true && num4 == 0)
         {
@@ -118,7 +112,7 @@ public class Inventory : MonoBehaviour
         //인벤토리 사용
         for (int i = 0; i < 3; i++)
         {
-            if (Slots[i].transform.GetChild(1).gameObject.activeInHierarchy == true)
+			if (Slots[i].transform.GetChild(1).gameObject.activeInHierarchy == true && ItemDesc != null)
             {
                 if (ItemDesc.transform.gameObject.activeInHierarchy == false)
                 {
@@ -127,7 +121,7 @@ public class Inventory : MonoBehaviour
                         ItemDesc2.transform.gameObject.SetActive(false);
                         ItemDesc2 = null;
                     }
-                   // SpaceOpenEvent(Item item);
+					SpaceOpenEvent(Items[i]);
                 }
                 else
                 {
@@ -172,7 +166,6 @@ public class Inventory : MonoBehaviour
 
     void addItem(int id)
     {
-
         for (int i = 0; i < database.items.Count; i++)
         {
 

@@ -21,11 +21,11 @@ EditorBuildSettings:
     path: Assets/UnityChan2D/Demo/Scenes/Start.unity
     guid: 00000000000000000000000000000000
   - enabled: 1
+    path: Assets/Scenes/Intro.unity
+    guid: 9a05307762c2d224f8129142811c7565
+  - enabled: 1
     path: Assets/Scenes/1F.unity
     guid: abda1ae7188701d4ba3230559a978a09
   - enabled: 1
     path: Assets/Scenes/Gameover.unity
     guid: 132116dad2581c3478517272ce51ebae
-  - enabled: 1
-    path: Assets/Scenes/Intro.unity
-    guid: 9a05307762c2d224f8129142811c7565
