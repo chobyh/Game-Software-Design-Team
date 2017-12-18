@@ -152,6 +152,7 @@ public class DiaryManager : MonoBehaviour {
         else
         {
             writingMark.SetActive(false);
+            iswrite = false;
         }
         
     }
