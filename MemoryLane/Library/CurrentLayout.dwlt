@@ -45,7 +45,7 @@ MonoBehaviour:
   m_MinSize: {x: 683, y: 492}
   m_MaxSize: {x: 14004, y: 14042}
   vertical: 0
-  controlID: 64
+  controlID: 10
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -210,7 +210,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 492}
   m_MaxSize: {x: 10002, y: 14042}
   vertical: 1
-  controlID: 65
+  controlID: 98
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -234,7 +234,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 221}
   m_MaxSize: {x: 8006, y: 4021}
   vertical: 0
-  controlID: 66
+  controlID: 99
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -462,19 +462,18 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 0
     m_Folders:
-    - Assets/Scripts/WangGeun
+    - Assets/Assets
   m_ViewMode: 1
   m_StartGridSize: 59
   m_LastFolders:
-  - Assets/Scripts/WangGeun
+  - Assets/Assets
   m_LastFoldersGridSize: 59
-  m_LastProjectPath: "C:\\Users\\user\\Documents\\GitHub\\Game-Software-Design-Team\\MemoryLane
-    - \uCD5C\uC885"
+  m_LastProjectPath: C:\Users\user\Documents\GitHub\Game-Software-Design-Team\MemoryLane
   m_IsLocked: 0
   m_FolderTreeState:
     scrollPos: {x: 0, y: 23}
-    m_SelectedIDs: 46280000
-    m_LastClickedID: 10310
+    m_SelectedIDs: 60260000
+    m_LastClickedID: 9824
     m_ExpandedIDs: 00000000322600006026000018290000ae290000b6290000de2f0000e02f0000e22f0000e42f0000e62f0000e82f0000ea2f0000ec2f0000ee2f000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -621,7 +620,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 78bbffff52bcffff5abdffff62bdffff6cbdffff7ebdffff1afcffff00000000
+    m_ExpandedIDs: ba37ffff3438ffff3839ffff3c39ffff4239ffff5039ffff1afcffff00000000c82a0000202b0000b42c0000f82d0000342f0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
